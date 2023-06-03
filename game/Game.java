@@ -19,7 +19,7 @@ public class Game extends JFrame{
 		
 		display = new Display(this);
 		map = new GameMap(40);	//Legt die TileSize fest
-		player = new Player(this, 25, 25, 0.375, 0.07);
+		player = new Player(this, 23.5, 13, (map.getTileSize() / 2), 0.07);
 		
 		display.requestFocusInWindow();
 		getContentPane().add(display);
