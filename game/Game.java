@@ -6,9 +6,6 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Game extends JFrame{
-
-	private final Display display;
-	
 	private final GameMap map;
 	
 	private final Player player;
@@ -16,10 +13,10 @@ public class Game extends JFrame{
 	//Konstruktor
 	public Game() {
 		super("MiningGame");
-		
-		display = new Display(this);
-		map = new GameMap(40);	//Legt die TileSize fest
-		player = new Player(this, 23.5, 13, (map.getTileSize() / 2), 0.07);
+		GameScreen gameScreen = new GameScreen();
+		Display display = new Display(this);
+		map = new GameMap(gameScreen.getScreenTileSize());	//Legt die TileSize fest
+		player = new Player(this, 23.5, 13, ((double)map.getTileSize() / 2), 0.07);
 		
 		display.requestFocusInWindow();
 		getContentPane().add(display);

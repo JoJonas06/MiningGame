@@ -38,15 +38,15 @@ public class GameMap extends GameObject{
         {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
         {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0}
 	};
-	
+
 	private final int tileSize;
 	
 	private final Tile[][] tiles;
 	
 	
 	//Kontruktor
-	public GameMap(int tileSize) {
-		this.tileSize = tileSize;
+	public GameMap(double tileSize) {
+		this.tileSize = (int) tileSize;
 		tiles = new Tile[DEFAULT_MAP.length][DEFAULT_MAP[0].length];
 		
 		for (int y = 0; y < getHeight(); y++) {
