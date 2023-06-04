@@ -45,7 +45,7 @@ public class GameMap extends GameObject{
 	
 	
 	//Kontruktor
-	public GameMap(double tileSize) {
+	public GameMap(int tileSize) {
 		this.tileSize = (int) tileSize;
 		tiles = new Tile[DEFAULT_MAP.length][DEFAULT_MAP[0].length];
 		
