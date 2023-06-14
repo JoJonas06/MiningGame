@@ -5,13 +5,20 @@ import java.awt.GraphicsEnvironment;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import javax.swing.JFrame;
+import game.Display;
 
 public class GameKeyListener implements KeyListener {
 
     private final JFrame frame;
 
-    public GameKeyListener(JFrame frame) {
+    private final Game game;
+
+    private final Display display;
+
+    public GameKeyListener(JFrame frame, Game game, Display display) {
         this.frame = frame;
+        this.game = game;
+        this.display = display;
     }
 
     @Override
@@ -23,6 +30,27 @@ public class GameKeyListener implements KeyListener {
         if (e.getKeyCode() == KeyEvent.VK_F11) {
             toggleFullscreen();
         }
+
+        game.movePlayer(e.getKeyCode());
+        display.repaint(); // Refresh the display
+
+
+        /*
+        int keyCode = e.getKeyCode();
+        Player player = game.getPlayer();
+
+        if (keyCode == KeyEvent.VK_W) {
+            player.moveForward();
+        } else if (keyCode == KeyEvent.VK_S) {
+            player.moveBackward();
+        } else if (keyCode == KeyEvent.VK_D) {
+            player.moveRight();
+        } else if (keyCode == KeyEvent.VK_A) {
+            player.moveLeft();
+        }
+
+
+         */
     }
 
     @Override
