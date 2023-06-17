@@ -12,9 +12,13 @@ public class GameScreen {
     Dimension screenSize = toolkit.getScreenSize();
     private final double tileSizeCount = 48;
     private final double screenWidth = screenSize.getWidth();
-    private final double screenTileSize = screenWidth / tileSizeCount;
+    private final double screenTileSize = Math.floor(screenWidth / tileSizeCount);
 
     public double getScreenTileSize(){
         return screenTileSize;
+    }
+
+    public void printScreenWidth(){
+        System.out.println(screenWidth);
     }
 }
