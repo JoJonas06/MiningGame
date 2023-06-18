@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c04b53fd-02c3-4db1-9b27-aeead0d64797" name="Changes" comment="Test">
+      <change beforePath="$PROJECT_DIR$/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/GameKeyListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/GameKeyListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/objects/creatures/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/objects/creatures/Player.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIEW_PUSH_PROTECTED_ONLY" value="true" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="MapVerbessern" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="ede7e469-d866-4415-a97a-7f8ff11a6906" />
+        <option name="url" value="https://github.com/JoJonas06/MiningGame.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
+  <component name="ProjectId" id="2QhHY0GVWXuml9p0MKy4A9HkBlL" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "TODO_SCOPE": "All Places",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.17",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.excludes"
+  }
+}]]></component>
+  <component name="RunManager" selected="Application.Game">
+    <configuration name="Game" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="game.Game" />
+      <module name="MiningGame" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="game.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GameScreen" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="game.GameScreen" />
+      <module name="MiningGame" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="game.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Game" />
+        <item itemvalue="Application.GameScreen" />
+        <item itemvalue="Application.Game" />
+        <item itemvalue="Application.GameScreen" />
+        <item itemvalue="Application.GameScreen" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c04b53fd-02c3-4db1-9b27-aeead0d64797" name="Changes" comment="" />
+      <created>1685798937571</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1685798937571</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Player angepasst.">
+      <created>1685806050415</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1685806050415</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Anfang einer Funktion, die die TileSize an die Bildschirmgröße anpasst.">
+      <created>1685841278911</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1685841278911</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Verbesserung der Funktion, die die TileSize an die Bildschirmgröße anpasst.">
+      <created>1685880102057</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1685880102057</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Verbesserung der Funktion, die die TileSize an die Bildschirmgröße anpasst.">
+      <created>1685882120594</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1685882120594</updated>
+    </task>
+    <task id="LOCAL-00005" summary="KeyHandlerPlayer erstellt (Test)">
+      <created>1686517196775</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1686517196775</updated>
+    </task>
+    <task id="LOCAL-00006" summary="t">
+      <created>1686519522497</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1686519522497</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Test">
+      <created>1686520025293</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1686520025293</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Interface KeyListener in Player eingebunden">
+      <created>1686521683850</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1686521683850</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Interface KeyListener in Player eingebunden">
+      <created>1686521889573</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1686521889574</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Tile Size auf double-Werte geändert, sodass alle Bildschirmgrößen aktuell 48 Blöcke darstellen. (Bitte klappt es)">
+      <created>1686761040777</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1686761040777</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Tile Size auf double-Werte geändert, sodass alle Bildschirmgrößen aktuell 48 Blöcke darstellen. (Bitte klappt es)">
+      <created>1686761057864</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1686761057864</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Tile Size auf double-Werte geändert, sodass alle Bildschirmgrößen aktuell 48 Blöcke darstellen. (Bitte klappt es)">
+      <created>1686761064481</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1686761064481</updated>
+    </task>
+    <task id="LOCAL-00013" summary="GameScreen angepasst (Math.floor)">
+      <created>1687038852714</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1687038852714</updated>
+    </task>
+    <task id="LOCAL-00014" summary="GameScreen angepasst (Math.floor)">
+      <created>1687039546399</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1687039546399</updated>
+    </task>
+    <task id="LOCAL-00015" summary="GameScreen angepasst (Math.floor)">
+      <created>1687039734360</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1687039734360</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Test">
+      <created>1687039815898</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1687039815898</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Test">
+      <created>1687040273083</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1687040273083</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Test">
+      <created>1687040784999</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1687040784999</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/master" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="master" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="MapVerbessern" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/MapVerbessern" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="PlayerKeyListener" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/Update-Funktion-im-Game-(Test)" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="KeyHandlerPlayer" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="HEAD" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ID_WIDTH">
+                <map>
+                  <entry key="Table.Default.Author.ColumnIdWidth" value="73" />
+                  <entry key="Table.Default.Date.ColumnIdWidth" value="81" />
+                  <entry key="Table.Space.CommitStatus.ColumnIdWidth" value="67" />
+                </map>
+              </option>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Player angepasst." />
+    <MESSAGE value="Anfang einer Funktion, die die TileSize an die Bildschirmgröße anpasst." />
+    <MESSAGE value="Verbesserung der Funktion, die die TileSize an die Bildschirmgröße anpasst." />
+    <MESSAGE value="KeyHandlerPlayer erstellt (Test)" />
+    <MESSAGE value="t" />
+    <MESSAGE value="Interface KeyListener in Player eingebunden" />
+    <MESSAGE value="Tile Size auf double-Werte geändert, sodass alle Bildschirmgrößen aktuell 48 Blöcke darstellen. (Bitte klappt es)" />
+    <MESSAGE value="GameScreen angepasst (Math.floor)" />
+    <MESSAGE value="Test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
