@@ -48,7 +48,8 @@ public class GameMap extends GameObject{
 	public GameMap(double tileSize) {
 		this.tileSize = tileSize;
 		tiles = new Tile[DEFAULT_MAP.length][DEFAULT_MAP[0].length];
-		
+
+
 		for (int y = 0; y < getHeight(); y++) {
 			for (int x = 0; x < getWidth(); x++) {
 				tiles[y][x] = switch (DEFAULT_MAP[y][x]) {
@@ -57,6 +58,10 @@ public class GameMap extends GameObject{
 				};	
 			}
 		}
+
+		playerX = 5;
+		playerY = 5;
+
 	}
 	
 	//Methoden
@@ -80,5 +85,15 @@ public class GameMap extends GameObject{
 	
 	public double getTileSize() {
 		return tileSize;
+	}
+
+	private int playerX; // Player's X coordinate
+
+	private int playerY; // Player's Y coordinate
+
+
+	public void setPlayerPosition(int x, int y) {
+		playerX = x;
+		playerY = y;
 	}
 }

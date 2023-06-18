@@ -20,9 +20,7 @@ public class GameKeyListener implements KeyListener {
 
     @Override
     public void keyPressed(KeyEvent e) {
-        if (e.getKeyCode() == KeyEvent.VK_F11) {
-            toggleFullscreen();
-        }
+        if (e.getKeyCode() == KeyEvent.VK_F11) {toggleFullscreen();}
     }
 
     @Override
