@@ -13,13 +13,14 @@ public class Game extends JFrame {
 	public Game() {
 		super("MiningGame");
 		GameScreen gameScreen = new GameScreen();
+
 		display = new Display(this);
 		map = new GameMap(gameScreen.getScreenTileSize());
 		player = new Player(this, 23.5, 15, ((double)map.getTileSize() / 2), 0.07);
 		GameKeyListener gameKeyListener = new GameKeyListener(this);
 		addKeyListener(player);
 		addKeyListener(gameKeyListener);
-
+    
 		display.requestFocusInWindow();
 		getContentPane().add(display);
 
