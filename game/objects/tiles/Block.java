@@ -1,6 +1,7 @@
 package game.objects.tiles;
 
 import java.awt.*;
+import java.awt.geom.Rectangle2D;
 
 public class Block extends Tile{
 	
@@ -9,9 +10,8 @@ public class Block extends Tile{
 	}
 
 	@Override
-	public void render(Graphics2D g, int tileSize) {
+	public void render(Graphics2D g, double tileSize) {
 		g.setColor(Color.GREEN);
-		g.fillRect(x * tileSize, y * tileSize, tileSize, tileSize);
+		g.fill(new Rectangle2D.Double(x * tileSize, y * tileSize, tileSize, tileSize));
 	}
-	
 }

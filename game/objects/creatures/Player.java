@@ -15,7 +15,7 @@ public class Player extends Creature implements KeyListener {
 	}
 	
 	@Override
-	public void render(Graphics2D g, int tileSize) {
+	public void render(Graphics2D g, double tileSize) {
 		double centerXOnScreen = centerX * tileSize;
 		double centerYOnScreen = centerY * tileSize;
 		double diameterOnScreen = radius * 2.0;
