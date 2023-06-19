@@ -8,16 +8,15 @@ import game.objects.GameObject;
 public abstract class Creature extends GameObject{
 
 	protected final Game game;
-	
 	protected double centerX;
-	
 	protected double centerY;
-	
 	protected double speed;
-	
 	protected final double radius;
-	
 	protected Color color;
+	protected int preferredDirectionX;
+	protected int preferredDirectionY;
+	protected int movingDirectionX;
+	protected int movingDirectionY;
 	
 	
 	public Creature(Game game, double centerX, double centerY, double radius, double speed, Color color) {
@@ -29,6 +28,17 @@ public abstract class Creature extends GameObject{
 		this.color = color;
 	}
 
+	public void tick() {
+		tickMovingDirection();
+
+		centerX += movingDirectionX * speed;
+		centerY += movingDirectionY * speed;
+	}
+
+	private void tickMovingDirection() {
+		movingDirectionX = preferredDirectionX;
+		movingDirectionY = preferredDirectionY;
+	}
 
 	public double getCenterX() {
 		return centerX;

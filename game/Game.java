@@ -4,6 +4,8 @@ import game.objects.creatures.Player;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 public class Game extends JFrame {
 	private final GameMap map;
@@ -39,9 +41,14 @@ public class Game extends JFrame {
 	}
 
 	private void startGameLoop() {
-		while(true){
+		Executors.newSingleThreadScheduledExecutor().scheduleAtFixedRate(() -> {
+			tick();
 			display.repaint();
-		}
+		}, 0L, 1000L / 120L, TimeUnit.MILLISECONDS);
+	}
+
+	public void tick(){
+		player.tick();
 	}
 
 	public void render(Graphics2D g2) {
