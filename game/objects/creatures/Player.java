@@ -33,15 +33,34 @@ public class Player extends Creature implements KeyListener {
 	@Override
 	public void keyPressed(KeyEvent e) {
 		switch (e.getKeyCode()){
-			case KeyEvent.VK_W -> centerY--;
-			case KeyEvent.VK_A -> centerX--;
-			case KeyEvent.VK_S -> centerY++;
-			case KeyEvent.VK_D -> centerX++;
+			case KeyEvent.VK_W -> {
+				preferredDirectionX = 0;
+				preferredDirectionY = -1;
+			}
+			case KeyEvent.VK_A -> {
+				preferredDirectionX = -1;
+				preferredDirectionY = 0;
+			}
+			case KeyEvent.VK_S -> {
+				preferredDirectionX = 0;
+				preferredDirectionY = 1;
+			}
+			case KeyEvent.VK_D -> {
+				preferredDirectionX = 1;
+				preferredDirectionY = 0;
+			}
 		}
 	}
 
 	@Override
 	public void keyReleased(KeyEvent e) {
-		//ignore
+		switch (e.getKeyCode()){
+			case KeyEvent.VK_W, KeyEvent.VK_S -> {
+				preferredDirectionY = 0;
+			}
+			case KeyEvent.VK_A, KeyEvent.VK_D -> {
+				preferredDirectionX = 0;
+			}
+		}
 	}
 }
