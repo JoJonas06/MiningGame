@@ -12,7 +12,7 @@ public class Player extends Creature implements KeyListener {
 
 
 	public Player(Game game, double centerX, double centerY, double radius) {
-		super(game, centerX, centerY, radius, 0.07, Color.RED, 0.2);
+		super(game, centerX, centerY, radius, 0.07, Color.RED, 10);
 	}
 
 	@Override
@@ -26,7 +26,7 @@ public class Player extends Creature implements KeyListener {
 		// Neue Transformation erstellen und auf den Spieler anwenden
 		AffineTransform transform = new AffineTransform();
 		transform.translate(centerXOnScreen, centerYOnScreen); // Translation zur Mitte des Spielers
-		transform.rotate(rotation); // Rotation um die Mitte des Spielers
+		transform.rotate(Math.toRadians(angle + 90)); // Rotation um die Mitte des Spielers
 		g.setTransform(transform);
 
 		//Körper
@@ -51,16 +51,16 @@ public class Player extends Creature implements KeyListener {
 	public void keyPressed(KeyEvent e) {
 		switch (e.getKeyCode()) {
 			case KeyEvent.VK_W:
-				preferredMovingDirection = -1;
+				moveForward = 1;
 				break;
 			case KeyEvent.VK_S:
-				preferredMovingDirection = 1;
+				moveForward = -1;
 				break;
 			case KeyEvent.VK_A:
-				rotation -= rotationSpeed;
+				angle -= rotationSpeed;
 				break;
 			case KeyEvent.VK_D:
-				rotation += rotationSpeed;
+				angle += rotationSpeed;
 				break;
 		}
 	}
@@ -69,7 +69,7 @@ public class Player extends Creature implements KeyListener {
 	public void keyReleased(KeyEvent e) {
 		switch (e.getKeyCode()){
 			case KeyEvent.VK_W, KeyEvent.VK_S -> {
-				preferredMovingDirection = 0;
+				moveForward = 0;
 			}
 		}
 	}
