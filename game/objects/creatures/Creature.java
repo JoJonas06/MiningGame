@@ -3,6 +3,7 @@ package game.objects.creatures;
 import java.awt.*;
 
 import game.Game;
+import game.GameMap;
 import game.objects.GameObject;
 
 public abstract class Creature extends GameObject{
@@ -36,6 +37,8 @@ public abstract class Creature extends GameObject{
 
 		centerX += movingDirectionX * speed;
 		centerY += movingDirectionY * speed;
+
+		tickWallCollisions();
 	}
 
 	private void tickMovingDirection() {
@@ -48,6 +51,16 @@ public abstract class Creature extends GameObject{
 			angle = 0;
 		} else if (angle < 0 ) {
 			angle = 359;
+		}
+	}
+
+	private void tickWallCollisions(){
+		GameMap map = game.getMap();
+
+		if(map.isNotFree((int) centerX, (int)centerY)){
+			System.out.println("Da ist kein Block");
+		}else{
+			System.out.println("Block");
 		}
 	}
 

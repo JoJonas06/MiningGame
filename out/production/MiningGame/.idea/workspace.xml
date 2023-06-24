@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c04b53fd-02c3-4db1-9b27-aeead0d64797" name="Changes" comment="Tick-Funktion eingbaut, Player Bewegung angepasst.">
-      <change beforePath="$PROJECT_DIR$/game/objects/creatures/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/objects/creatures/Player.java" afterDir="false" />
+    <list default="true" id="c04b53fd-02c3-4db1-9b27-aeead0d64797" name="Changes" comment="Bug behoben. Player läuft gut">
+      <change beforePath="$PROJECT_DIR$/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/GameMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/GameMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/objects/creatures/Creature.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/objects/creatures/Creature.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MiningGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MiningGame/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MiningGame/game/objects/creatures/Creature.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MiningGame/game/objects/creatures/Creature.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MiningGame/game/objects/creatures/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MiningGame/game/objects/creatures/Player.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -264,7 +267,21 @@
       <option name="project" value="LOCAL" />
       <updated>1687206673119</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Player Bewegung angepasst (nuch großer Bug vorhanden) und Hände hinzugefügt">
+      <created>1687567256534</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1687567256534</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Bug behoben. Player läuft gut">
+      <created>1687611135038</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1687611135038</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -370,7 +387,9 @@
     <MESSAGE value="Ordnung" />
     <MESSAGE value="Player bewegen und MapVerbesserungen, sind jetzt zusammengefügt." />
     <MESSAGE value="Tick-Funktion eingbaut, Player Bewegung angepasst." />
-    <option name="LAST_COMMIT_MESSAGE" value="Tick-Funktion eingbaut, Player Bewegung angepasst." />
+    <MESSAGE value="Player Bewegung angepasst (nuch großer Bug vorhanden) und Hände hinzugefügt" />
+    <MESSAGE value="Bug behoben. Player läuft gut" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bug behoben. Player läuft gut" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

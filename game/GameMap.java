@@ -87,6 +87,14 @@ public class GameMap extends GameObject{
 		return tileSize;
 	}
 
+	public boolean isNotFree(int x, int y){
+		if(!(tiles[x][y] instanceof Block)){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
 	private int playerX; // Player's X coordinate
 
 	private int playerY; // Player's Y coordinate

@@ -59,6 +59,10 @@ public class Game extends JFrame {
 		player.render(g2, map.getTileSize());
 	}
 
+	public GameMap getMap() {
+		return map;
+	}
+
 	public static void main(String[] args) {
 		new Game();
 		CoordinateSystem.coordinateSystem(400, 400);
