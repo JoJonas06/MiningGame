@@ -18,7 +18,7 @@ public class Game extends JFrame {
 
 		display = new Display(this);
 		map = new GameMap(gameScreen.getScreenTileSize());
-		player = new Player(this, 23.5, 15, (map.getTileSize() / 2), 0.07);
+		player = new Player(this, 23.5, 15, (map.getTileSize() / 2));
 		GameKeyListener gameKeyListener = new GameKeyListener(this);
 		addKeyListener(player);
 		addKeyListener(gameKeyListener);

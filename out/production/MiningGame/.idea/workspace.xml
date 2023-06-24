@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c04b53fd-02c3-4db1-9b27-aeead0d64797" name="Changes" comment="Test">
-      <change beforePath="$PROJECT_DIR$/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/GameKeyListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/GameKeyListener.java" afterDir="false" />
+    <list default="true" id="c04b53fd-02c3-4db1-9b27-aeead0d64797" name="Changes" comment="Tick-Funktion eingbaut, Player Bewegung angepasst.">
       <change beforePath="$PROJECT_DIR$/game/objects/creatures/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/objects/creatures/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MiningGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MiningGame/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MiningGame/game/objects/creatures/Creature.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MiningGame/game/objects/creatures/Creature.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +25,7 @@
     <option name="PREVIEW_PUSH_PROTECTED_ONLY" value="true" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="MapVerbessern" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -45,7 +45,7 @@
     </option>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2QhHY0GVWXuml9p0MKy4A9HkBlL" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -53,17 +53,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "TODO_SCOPE": "All Places",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.17",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "reference.projectsettings.compiler.excludes"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;TODO_SCOPE&quot;: &quot;All Places&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.excludes&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Application.Game">
     <configuration name="Game" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="game.Game" />
@@ -97,7 +97,7 @@
         <item itemvalue="Application.GameScreen" />
         <item itemvalue="Application.Game" />
         <item itemvalue="Application.GameScreen" />
-        <item itemvalue="Application.GameScreen" />
+        <item itemvalue="Application.Game" />
       </list>
     </recent_temporary>
   </component>
@@ -236,7 +236,35 @@
       <option name="project" value="LOCAL" />
       <updated>1687040784999</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Ordnung">
+      <created>1687046219966</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1687046219966</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Player bewegen und MapVerbesserungen, sind jetzt zusammengefügt.">
+      <created>1687046905680</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1687046905680</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Player bewegen und MapVerbesserungen, sind jetzt zusammengefügt.">
+      <created>1687046986841</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1687046986841</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Tick-Funktion eingbaut, Player Bewegung angepasst.">
+      <created>1687206673119</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1687206673119</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -245,6 +273,16 @@
         <entry key="Branch">
           <value>
             <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="PlayerMovement" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="TickFunction" />
+                </option>
+              </RecentGroup>
               <RecentGroup>
                 <option name="FILTER_VALUES">
                   <option value="origin/master" />
@@ -307,7 +345,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/master" />
+                        <option value="PlayerMovement" />
                       </list>
                     </value>
                   </entry>
@@ -329,7 +367,10 @@
     <MESSAGE value="Tile Size auf double-Werte geändert, sodass alle Bildschirmgrößen aktuell 48 Blöcke darstellen. (Bitte klappt es)" />
     <MESSAGE value="GameScreen angepasst (Math.floor)" />
     <MESSAGE value="Test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test" />
+    <MESSAGE value="Ordnung" />
+    <MESSAGE value="Player bewegen und MapVerbesserungen, sind jetzt zusammengefügt." />
+    <MESSAGE value="Tick-Funktion eingbaut, Player Bewegung angepasst." />
+    <option name="LAST_COMMIT_MESSAGE" value="Tick-Funktion eingbaut, Player Bewegung angepasst." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
