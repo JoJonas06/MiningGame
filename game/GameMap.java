@@ -49,7 +49,6 @@ public class GameMap extends GameObject{
 		this.tileSize = tileSize;
 		tiles = new Tile[DEFAULT_MAP.length][DEFAULT_MAP[0].length];
 
-
 		for (int y = 0; y < getHeight(); y++) {
 			for (int x = 0; x < getWidth(); x++) {
 				tiles[y][x] = switch (DEFAULT_MAP[y][x]) {
@@ -73,6 +72,7 @@ public class GameMap extends GameObject{
 			}
 		}
 	}
+
 	
 	//Hilfsmethoden
 	public int getWidth() {
@@ -87,12 +87,8 @@ public class GameMap extends GameObject{
 		return tileSize;
 	}
 
-	public boolean isNotFree(int x, int y){
-		if(!(tiles[x][y] instanceof Block)){
-			return true;
-		}else{
-			return false;
-		}
+	public Tile[][] getTiles(){
+		return tiles;
 	}
 
 	private int playerX; // Player's X coordinate

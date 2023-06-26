@@ -10,7 +10,6 @@ import game.Game;
 
 public class Player extends Creature implements KeyListener {
 
-
 	public Player(Game game, double centerX, double centerY, double radius) {
 		super(game, centerX, centerY, radius, 0.07, Color.RED, 10);
 	}

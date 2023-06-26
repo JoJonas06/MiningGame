@@ -62,6 +62,9 @@ public class Game extends JFrame {
 	public GameMap getMap() {
 		return map;
 	}
+	public Player getPlayer() {
+		return player;
+	}
 
 	public static void main(String[] args) {
 		new Game();

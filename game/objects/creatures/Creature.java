@@ -2,6 +2,7 @@ package game.objects.creatures;
 
 import java.awt.*;
 
+import game.Collision;
 import game.Game;
 import game.GameMap;
 import game.objects.GameObject;
@@ -32,18 +33,35 @@ public abstract class Creature extends GameObject{
 	}
 
 	public void tick() {
+		GameMap map = game.getMap();
+
 		updateAngle();
 		tickMovingDirection();
 
 		centerX += movingDirectionX * speed;
 		centerY += movingDirectionY * speed;
 
-		tickWallCollisions();
+		if(Collision.wallCollision(game)){
+			if(centerX <= 1) {
+				centerX += 0.1;
+			}
+			if(centerX > map.getWidth() - 0.5) {
+				centerX -= 0.1;
+			}
+			if(centerY <= 1) {
+				centerY += 0.1;
+			}
+			if(centerY > map.getHeight() - 0.5) {
+				centerY -= 0.1;
+			}
+		}
+
+		Collision.airCollision(game);
 	}
 
 	private void tickMovingDirection() {
-			movingDirectionX = Math.cos(Math.toRadians(angle)) * moveForward;
-			movingDirectionY = Math.sin(Math.toRadians(angle)) * moveForward;
+		movingDirectionX = Math.cos(Math.toRadians(angle)) * moveForward;
+		movingDirectionY = Math.sin(Math.toRadians(angle)) * moveForward;
 	}
 
 	private void updateAngle(){
@@ -54,22 +72,20 @@ public abstract class Creature extends GameObject{
 		}
 	}
 
-	private void tickWallCollisions(){
-		GameMap map = game.getMap();
-
-		if(map.isNotFree((int) centerX, (int)centerY)){
-			System.out.println("Da ist kein Block");
-		}else{
-			System.out.println("Block");
-		}
-	}
-
 	public double getCenterX() {
 		return centerX;
 	}
 
 	public double getCenterY() {
 		return centerY;
+	}
+
+	public void setCenterX(double centerX) {
+		this.centerX = centerX;
+	}
+
+	public void setCenterY(double centerY) {
+		this.centerY = centerY;
 	}
 
 	public double getSpeed() {
