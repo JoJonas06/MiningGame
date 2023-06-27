@@ -10,7 +10,7 @@ public class Air extends Tile{
 
 	@Override
 	public void render(Graphics2D g, double tileSize) {
-		//ignore
+		//ignorieren (nicht sichtbar)
 	}
 
 }

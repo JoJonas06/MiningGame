@@ -15,17 +15,17 @@ public class Game extends JFrame {
 	public Game() {
 		super("MiningGame");
 		GameScreen gameScreen = new GameScreen();
-
+		//Initialisierungen
 		display = new Display(this);
 		map = new GameMap(gameScreen.getScreenTileSize());
 		player = new Player(this, 23.5, 15, (map.getTileSize() / 2));
+		//KeyListener
 		GameKeyListener gameKeyListener = new GameKeyListener(this);
 		addKeyListener(player);
 		addKeyListener(gameKeyListener);
-    
+    	//Display
 		display.requestFocusInWindow();
 		getContentPane().add(display);
-
 		setSize(1080, 720);
 		setResizable(true);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -40,11 +40,11 @@ public class Game extends JFrame {
 		startGameLoop();
 	}
 
-	private void startGameLoop() {
+	private void startGameLoop() { // Wird X mal pro Sekunde ausgeführt
 		Executors.newSingleThreadScheduledExecutor().scheduleAtFixedRate(() -> {
 			tick();
-			display.repaint();
-		}, 0L, 1000L / 120L, TimeUnit.MILLISECONDS);
+			display.repaint(); // Wichtig, um das Display zu aktualisieren
+		}, 0L, 1000L / 120L, TimeUnit.MILLISECONDS); //FPS - festlegen
 	}
 
 	public void tick(){

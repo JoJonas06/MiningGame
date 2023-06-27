@@ -4,9 +4,11 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 public class GameScreen {
 
-    public GameScreen(){
+    //Passt die TileSize an die Bildschirmgröße entsprechend an,
+    // sodass auf jeder Bildschirmgröße gleich viele Teile zu sehen sind.
 
-    }
+
+    public GameScreen(){}
 
     Toolkit toolkit = Toolkit.getDefaultToolkit();
     Dimension screenSize = toolkit.getScreenSize();
