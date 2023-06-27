@@ -2,7 +2,9 @@ package game.objects.creatures;
 
 import java.awt.*;
 
+import game.Collision;
 import game.Game;
+import game.GameMap;
 import game.objects.GameObject;
 
 public abstract class Creature extends GameObject{
@@ -13,56 +15,93 @@ public abstract class Creature extends GameObject{
 	protected double speed;
 	protected final double radius;
 	protected Color color;
-	protected int preferredDirectionX;
-	protected int preferredDirectionY;
-	protected int movingDirectionX;
-	protected int movingDirectionY;
+	protected int moveForward;
+	protected double angle;
+	protected double rotationSpeed;
+	protected double movingDirectionX;
+	protected double movingDirectionY;
 	
 	
-	public Creature(Game game, double centerX, double centerY, double radius, double speed, Color color) {
+	public Creature(Game game, double centerX, double centerY, double radius, double speed, Color color, double rotationSpeed) {
 		this.game = game;
 		this.centerX = centerX;
 		this.centerY = centerY;
 		this.radius = radius;
 		this.speed = speed;
 		this.color = color;
+		this.rotationSpeed = rotationSpeed;
 	}
 
 	public void tick() {
+		GameMap map = game.getMap();
+
+		updateAngle();
 		tickMovingDirection();
 
 		centerX += movingDirectionX * speed;
 		centerY += movingDirectionY * speed;
+
+		if(Collision.wallCollision(game)){
+			if(centerX <= 1) {
+				centerX += 0.1;
+			}
+			if(centerX > map.getWidth() - 0.5) {
+				centerX -= 0.1;
+			}
+			if(centerY <= 1) {
+				centerY += 0.1;
+			}
+			if(centerY > map.getHeight() - 0.5) {
+				centerY -= 0.1;
+			}
+		}
+
+		Collision.airCollision(game);
 	}
 
 	private void tickMovingDirection() {
-		movingDirectionX = preferredDirectionX;
-		movingDirectionY = preferredDirectionY;
+		movingDirectionX = Math.cos(Math.toRadians(angle)) * moveForward;
+		movingDirectionY = Math.sin(Math.toRadians(angle)) * moveForward;
+	}
+
+	private void updateAngle(){
+		if (angle > 359){
+			angle = 0;
+		} else if (angle < 0 ) {
+			angle = 359;
+		}
 	}
 
 	public double getCenterX() {
 		return centerX;
 	}
 
-
 	public double getCenterY() {
 		return centerY;
+	}
+
+	public void setCenterX(double centerX) {
+		this.centerX = centerX;
+	}
+
+	public void setCenterY(double centerY) {
+		this.centerY = centerY;
 	}
 
 	public double getSpeed() {
 		return speed;
 	}
 
-
 	public void setSpeed(double speed) {
 		this.speed = speed;
 	}
-
 
 	public double getRadius() {
 		return radius;
 	}
 	
-	
+	public void setAngle(double angle){
+		this.angle = angle;
+	}
 	
 }
