@@ -4,17 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c04b53fd-02c3-4db1-9b27-aeead0d64797" name="Changes" comment="Player läuft. Überprüfung der Wandkollisionen hat einen Bug (keine Ahnung wo)">
-      <change beforePath="$PROJECT_DIR$/game/GameMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/GameMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/objects/creatures/Creature.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/objects/creatures/Creature.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MiningGame/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_06_2023_23_58_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MiningGame/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_06_2023_23_58__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MiningGame/.idea/shelf/Uncommitted_changes_before_Checkout_at_18_06_2023_00_00_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MiningGame/.idea/shelf/Uncommitted_changes_before_Checkout_at_18_06_2023_00_00__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MiningGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MiningGame/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MiningGame/game/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MiningGame/game/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MiningGame/game/GameMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MiningGame/game/GameMap.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MiningGame/game/objects/creatures/Creature.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MiningGame/game/objects/creatures/Creature.class" afterDir="false" />
+    <list default="true" id="c04b53fd-02c3-4db1-9b27-aeead0d64797" name="Changes" comment="Anfang generierte Map mit Zufall.">
+      <change beforePath="$PROJECT_DIR$/out/production/MiningGame/game/GameScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MiningGame/game/GameScreen.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +55,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;TODO_SCOPE&quot;: &quot;All Places&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
@@ -102,9 +94,9 @@
       <list>
         <item itemvalue="Application.Game" />
         <item itemvalue="Application.GameScreen" />
-        <item itemvalue="Application.Game" />
         <item itemvalue="Application.GameScreen" />
         <item itemvalue="Application.Game" />
+        <item itemvalue="Application.GameScreen" />
       </list>
     </recent_temporary>
   </component>
@@ -292,7 +284,28 @@
       <option name="project" value="LOCAL" />
       <updated>1687625970965</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Collisons und Player Movement funktionieren.">
+      <created>1687817871774</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1687817871774</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Collisons und Player Movement funktionieren.">
+      <created>1687890548844</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1687890548845</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Anfang generierte Map mit Zufall.">
+      <created>1687902414213</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1687902414213</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -301,6 +314,16 @@
         <entry key="Branch">
           <value>
             <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="MapAutomatisierung_und_KameraVerfolgung" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="master" />
+                </option>
+              </RecentGroup>
               <RecentGroup>
                 <option name="FILTER_VALUES">
                   <option value="PlayerMovement" />
@@ -314,11 +337,6 @@
               <RecentGroup>
                 <option name="FILTER_VALUES">
                   <option value="origin/master" />
-                </option>
-              </RecentGroup>
-              <RecentGroup>
-                <option name="FILTER_VALUES">
-                  <option value="master" />
                 </option>
               </RecentGroup>
               <RecentGroup>
@@ -346,11 +364,6 @@
                   <option value="KeyHandlerPlayer" />
                 </option>
               </RecentGroup>
-              <RecentGroup>
-                <option name="FILTER_VALUES">
-                  <option value="HEAD" />
-                </option>
-              </RecentGroup>
             </list>
           </value>
         </entry>
@@ -373,7 +386,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="PlayerMovement" />
+                        <option value="MapAutomatisierung_und_KameraVerfolgung" />
                       </list>
                     </value>
                   </entry>
@@ -401,7 +414,9 @@
     <MESSAGE value="Player Bewegung angepasst (nuch großer Bug vorhanden) und Hände hinzugefügt" />
     <MESSAGE value="Bug behoben. Player läuft gut" />
     <MESSAGE value="Player läuft. Überprüfung der Wandkollisionen hat einen Bug (keine Ahnung wo)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Player läuft. Überprüfung der Wandkollisionen hat einen Bug (keine Ahnung wo)" />
+    <MESSAGE value="Collisons und Player Movement funktionieren." />
+    <MESSAGE value="Anfang generierte Map mit Zufall." />
+    <option name="LAST_COMMIT_MESSAGE" value="Anfang generierte Map mit Zufall." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

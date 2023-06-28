@@ -56,6 +56,7 @@ public abstract class Creature extends GameObject{
 			}
 		}
 
+		Collision.rockCollision(game);
 		Collision.airCollision(game);
 	}
 

@@ -18,7 +18,8 @@ public class Game extends JFrame {
 		//Initialisierungen
 		display = new Display(this);
 		map = new GameMap(gameScreen.getScreenTileSize());
-		player = new Player(this, 23.5, 15, (map.getTileSize() / 2));
+							//game	 	centerX 				centerY 				 radius
+		player = new Player(this, (map.getWidth() * 0.5), (map.getHeight() * 0.5), (map.getTileSize() * 0.5));
 		//KeyListener
 		GameKeyListener gameKeyListener = new GameKeyListener(this);
 		addKeyListener(player);
@@ -51,10 +52,17 @@ public class Game extends JFrame {
 		player.tick();
 	}
 
+	private int rendertemp = 0;
 	public void render(Graphics2D g2) {
 		g2.setColor(Color.BLACK);
 		g2.fillRect(0, 0, getWidth(), getHeight());
 
+		map.render(g2, map.getTileSize());
+		player.render(g2, map.getTileSize());
+		if(rendertemp == 0){
+			map.generateMap(this);
+			rendertemp++;
+		}
 		map.render(g2, map.getTileSize());
 		player.render(g2, map.getTileSize());
 	}
