@@ -1,14 +1,13 @@
 package game.objects.creatures;
 
 import java.awt.*;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
+import java.awt.event.*;
 import java.awt.geom.AffineTransform;
 import java.awt.geom.Ellipse2D;
 
 import game.Game;
 
-public class Player extends Creature implements KeyListener {
+public class Player extends Creature implements KeyListener, MouseListener, MouseMotionListener {
 
 	public Player(Game game, double centerX, double centerY, double radius) {
 		super(game, centerX, centerY, radius, 0.07, Color.RED, 10);
@@ -25,7 +24,7 @@ public class Player extends Creature implements KeyListener {
 		// Neue Transformation erstellen und auf den Spieler anwenden
 		AffineTransform transform = new AffineTransform();
 		transform.translate(centerXOnScreen, centerYOnScreen); // Translation zur Mitte des Spielers
-		transform.rotate(Math.toRadians(angle + 90)); // Rotation um die Mitte des Spielers
+		transform.rotate((rotation + 90)); // Rotation um die Mitte des Spielers
 		g.setTransform(transform);
 
 		//Körper
@@ -48,19 +47,8 @@ public class Player extends Creature implements KeyListener {
 
 	@Override
 	public void keyPressed(KeyEvent e) {
-		switch (e.getKeyCode()) {
-			case KeyEvent.VK_W:
-				moveForward = 1;
-				break;
-			case KeyEvent.VK_S:
-				moveForward = -1;
-				break;
-			case KeyEvent.VK_A:
-				angle -= rotationSpeed;
-				break;
-			case KeyEvent.VK_D:
-				angle += rotationSpeed;
-				break;
+		if (e.getKeyCode() == KeyEvent.VK_W) {
+			moveForward = 1;
 		}
 	}
 
@@ -71,5 +59,45 @@ public class Player extends Creature implements KeyListener {
 				moveForward = 0;
 			}
 		}
+	}
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+
+	}
+
+	@Override
+	public void mouseDragged(MouseEvent e) {
+
+	}
+
+	@Override
+	public void mouseMoved(MouseEvent e) {
+		double mouseX = e.getX();
+		double mouseY = e.getY();
+		double playerX = getCenterX();
+		double playerY = getCenterY();
+
+		rotation = Math.toDegrees(Math.atan2(mouseY - playerY, mouseX - playerX));
 	}
 }

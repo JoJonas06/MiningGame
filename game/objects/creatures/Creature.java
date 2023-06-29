@@ -16,7 +16,7 @@ public abstract class Creature extends GameObject{
 	protected final double radius;
 	protected Color color;
 	protected int moveForward;
-	protected double angle;
+	protected double rotation;
 	protected double rotationSpeed;
 	protected double movingDirectionX;
 	protected double movingDirectionY;
@@ -35,7 +35,6 @@ public abstract class Creature extends GameObject{
 	public void tick() {
 		GameMap map = game.getMap();
 
-		updateAngle();
 		tickMovingDirection();
 
 		centerX += movingDirectionX * speed;
@@ -61,16 +60,8 @@ public abstract class Creature extends GameObject{
 	}
 
 	private void tickMovingDirection() {
-		movingDirectionX = Math.cos(Math.toRadians(angle)) * moveForward;
-		movingDirectionY = Math.sin(Math.toRadians(angle)) * moveForward;
-	}
-
-	private void updateAngle(){
-		if (angle > 359){
-			angle = 0;
-		} else if (angle < 0 ) {
-			angle = 359;
-		}
+		movingDirectionX = Math.sin(rotation) * moveForward;
+		movingDirectionY = Math.cos(rotation) * moveForward;
 	}
 
 	public double getCenterX() {
@@ -96,13 +87,4 @@ public abstract class Creature extends GameObject{
 	public void setSpeed(double speed) {
 		this.speed = speed;
 	}
-
-	public double getRadius() {
-		return radius;
-	}
-	
-	public void setAngle(double angle){
-		this.angle = angle;
-	}
-	
 }
