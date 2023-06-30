@@ -76,14 +76,13 @@ public class Player extends Creature implements KeyListener, MouseMotionListener
 		double mouseY = e.getY() / map.getTileSize();
 		double playerX = getCenterX();
 		double playerY = getCenterY();
-		double atan2 = 0;
-		double degrees = 0;
+		double atan2;
 
 		atan2 = Math.toDegrees(Math.atan2((mouseY - playerY), (mouseX - playerX)));
-		degrees = (atan2 * Math.PI * 2) / 360; // Wie das geht? - Keine Ahnung, (zufällige Idee aus Verzweiflung)
-		rotation = degrees;
-		System.out.println("rotation: " + rotation);
+		rotation = (atan2 * Math.PI * 2) / 360; // Wie das geht? - Keine Ahnung, (zufällige Idee aus Verzweiflung)
+
 		/* Debug:
+		System.out.println("rotation: " + rotation);
 		System.out.println("mouseX: " + mouseX + ", mouseY: " + mouseY + ", playerX: " + playerX + ", playerY: " + playerY);
 		System.out.println("▲Y: " + (mouseY - playerY) + ", ▲X: " + (mouseX - playerX));
 		System.out.println("atan: " + atan2);
