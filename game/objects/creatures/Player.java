@@ -81,6 +81,7 @@ public class Player extends Creature implements KeyListener, MouseMotionListener
 		atan2 = Math.toDegrees(Math.atan2((mouseY - playerY), (mouseX - playerX)));
 		rotation = (atan2 * Math.PI * 2) / 360; // Wie das geht? - Keine Ahnung, (zufällige Idee aus Verzweiflung)
 
+
 		/* Debug:
 		System.out.println("rotation: " + rotation);
 		System.out.println("mouseX: " + mouseX + ", mouseY: " + mouseY + ", playerX: " + playerX + ", playerY: " + playerY);
