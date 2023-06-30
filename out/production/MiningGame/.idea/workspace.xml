@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c04b53fd-02c3-4db1-9b27-aeead0d64797" name="Changes" comment="Rock hinzugefügt. Random Generierung.">
-      <change beforePath="$PROJECT_DIR$/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/objects/creatures/Creature.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/objects/creatures/Creature.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/objects/creatures/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/objects/creatures/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MiningGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MiningGame/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MiningGame/game/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MiningGame/game/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MiningGame/game/objects/creatures/Creature.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MiningGame/game/objects/creatures/Creature.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MiningGame/game/objects/creatures/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MiningGame/game/objects/creatures/Player.class" afterDir="false" />
-    </list>
+    <list default="true" id="c04b53fd-02c3-4db1-9b27-aeead0d64797" name="Changes" comment="Ich hab doch auch keine Ahnung mehr" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -318,7 +310,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687993825506</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Ich hab doch auch keine Ahnung mehr">
+      <created>1688071841263</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1688071841263</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -430,7 +429,8 @@
     <MESSAGE value="Collisons und Player Movement funktionieren." />
     <MESSAGE value="Anfang generierte Map mit Zufall." />
     <MESSAGE value="Rock hinzugefügt. Random Generierung." />
-    <option name="LAST_COMMIT_MESSAGE" value="Rock hinzugefügt. Random Generierung." />
+    <MESSAGE value="Ich hab doch auch keine Ahnung mehr" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ich hab doch auch keine Ahnung mehr" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

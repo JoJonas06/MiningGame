@@ -60,8 +60,8 @@ public abstract class Creature extends GameObject{
 	}
 
 	private void tickMovingDirection() {
-		movingDirectionX = Math.sin(rotation) * moveForward;
-		movingDirectionY = Math.cos(rotation) * moveForward;
+		movingDirectionX = Math.cos(rotation) * moveForward;
+		movingDirectionY = Math.sin(rotation) * moveForward;
 	}
 
 	public double getCenterX() {

@@ -6,8 +6,9 @@ import java.awt.geom.AffineTransform;
 import java.awt.geom.Ellipse2D;
 
 import game.Game;
+import game.GameMap;
 
-public class Player extends Creature implements KeyListener, MouseListener, MouseMotionListener {
+public class Player extends Creature implements KeyListener, MouseMotionListener {
 
 	public Player(Game game, double centerX, double centerY, double radius) {
 		super(game, centerX, centerY, radius, 0.07, Color.RED, 10);
@@ -24,7 +25,7 @@ public class Player extends Creature implements KeyListener, MouseListener, Mous
 		// Neue Transformation erstellen und auf den Spieler anwenden
 		AffineTransform transform = new AffineTransform();
 		transform.translate(centerXOnScreen, centerYOnScreen); // Translation zur Mitte des Spielers
-		transform.rotate((rotation + 90)); // Rotation um die Mitte des Spielers
+		transform.rotate((rotation + Math.PI/2)); // Rotation um die Mitte des Spielers
 		g.setTransform(transform);
 
 		//Körper
@@ -62,42 +63,31 @@ public class Player extends Creature implements KeyListener, MouseListener, Mous
 	}
 
 	@Override
-	public void mouseClicked(MouseEvent e) {
-
-	}
-
-	@Override
-	public void mousePressed(MouseEvent e) {
-
-	}
-
-	@Override
-	public void mouseReleased(MouseEvent e) {
-
-	}
-
-	@Override
-	public void mouseEntered(MouseEvent e) {
-
-	}
-
-	@Override
-	public void mouseExited(MouseEvent e) {
-
-	}
-
-	@Override
 	public void mouseDragged(MouseEvent e) {
 
 	}
 
 	@Override
 	public void mouseMoved(MouseEvent e) {
-		double mouseX = e.getX();
-		double mouseY = e.getY();
+		GameMap map = game.getMap();
+		Player player = game.getPlayer();
+
+		double mouseX = e.getX() / map.getTileSize();
+		double mouseY = e.getY() / map.getTileSize();
 		double playerX = getCenterX();
 		double playerY = getCenterY();
+		double atan2 = 0;
+		double degrees = 0;
 
-		rotation = Math.toDegrees(Math.atan2(mouseY - playerY, mouseX - playerX));
+		atan2 = Math.toDegrees(Math.atan2((mouseY - playerY), (mouseX - playerX)));
+		degrees = (atan2 * Math.PI * 2) / 360; // Wie das geht? - Keine Ahnung, (zufällige Idee aus Verzweiflung)
+		rotation = degrees;
+		System.out.println("rotation: " + rotation);
+		/* Debug:
+		System.out.println("mouseX: " + mouseX + ", mouseY: " + mouseY + ", playerX: " + playerX + ", playerY: " + playerY);
+		System.out.println("▲Y: " + (mouseY - playerY) + ", ▲X: " + (mouseX - playerX));
+		System.out.println("atan: " + atan2);
+		*/
+
 	}
 }
