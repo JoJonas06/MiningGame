@@ -3,6 +3,7 @@ package game.objects.tiles;
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Rectangle2D;
+import java.util.Random;
 
 public class Rock extends Tile {
 
@@ -26,4 +27,5 @@ public class Rock extends Tile {
         g.setColor(Color.DARK_GRAY);
         g.fill(new Ellipse2D.Double(centerXOnScreen - radius, centerYOnScreen - radius, diameterOnScreen, diameterOnScreen));
     }
+
 }

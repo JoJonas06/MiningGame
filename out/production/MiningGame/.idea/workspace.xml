@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c04b53fd-02c3-4db1-9b27-aeead0d64797" name="Changes" comment="Ich hab doch auch keine Ahnung mehr" />
+    <list default="true" id="c04b53fd-02c3-4db1-9b27-aeead0d64797" name="Changes" comment="Wie es funktioniert? - Keine ahnung. Wie ich darauf gekommen bin? - Keine Ahnung. Aber der Player läuft jetzt mit W zur Maus.&#10;War es verschwendete Labenszeit und das alte System hätte auch funktioniert? - Ja">
+      <change beforePath="$PROJECT_DIR$/game/GameMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/GameMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/objects/creatures/Creature.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/objects/creatures/Creature.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/objects/tiles/Rock.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/objects/tiles/Rock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MiningGame/game/objects/creatures/Creature.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MiningGame/game/objects/creatures/Creature.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,18 +54,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;TODO_SCOPE&quot;: &quot;All Places&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.excludes&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "TODO_SCOPE": "All Places",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.17",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.editor"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Application.Game">
     <configuration name="Game" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="game.Game" />
@@ -317,7 +322,42 @@
       <option name="project" value="LOCAL" />
       <updated>1688071841263</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Wie es funktioniert? - Keine ahnung. Wie ich darauf gekommen bin? - Keine Ahnung. Aber der Player läuft jetzt mit W zur Maus.&#10;War es verschwendete Labenszeit und das alte System hätte auch funktioniert? - Ja">
+      <created>1688140970618</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1688140970618</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Wie es funktioniert? - Keine ahnung. Wie ich darauf gekommen bin? - Keine Ahnung. Aber der Player läuft jetzt mit W zur Maus.&#10;War es verschwendete Labenszeit und das alte System hätte auch funktioniert? - Ja">
+      <created>1688141042985</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1688141042985</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Wie es funktioniert? - Keine ahnung. Wie ich darauf gekommen bin? - Keine Ahnung. Aber der Player läuft jetzt mit W zur Maus.&#10;War es verschwendete Labenszeit und das alte System hätte auch funktioniert? - Ja">
+      <created>1688141127064</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1688141127064</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Wie es funktioniert? - Keine ahnung. Wie ich darauf gekommen bin? - Keine Ahnung. Aber der Player läuft jetzt mit W zur Maus.&#10;War es verschwendete Labenszeit und das alte System hätte auch funktioniert? - Ja">
+      <created>1688141221238</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1688141221238</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Wie es funktioniert? - Keine ahnung. Wie ich darauf gekommen bin? - Keine Ahnung. Aber der Player läuft jetzt mit W zur Maus.&#10;War es verschwendete Labenszeit und das alte System hätte auch funktioniert? - Ja">
+      <created>1688141441582</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1688141441582</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -430,7 +470,8 @@
     <MESSAGE value="Anfang generierte Map mit Zufall." />
     <MESSAGE value="Rock hinzugefügt. Random Generierung." />
     <MESSAGE value="Ich hab doch auch keine Ahnung mehr" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ich hab doch auch keine Ahnung mehr" />
+    <MESSAGE value="Wie es funktioniert? - Keine ahnung. Wie ich darauf gekommen bin? - Keine Ahnung. Aber der Player läuft jetzt mit W zur Maus.&#10;War es verschwendete Labenszeit und das alte System hätte auch funktioniert? - Ja" />
+    <option name="LAST_COMMIT_MESSAGE" value="Wie es funktioniert? - Keine ahnung. Wie ich darauf gekommen bin? - Keine Ahnung. Aber der Player läuft jetzt mit W zur Maus.&#10;War es verschwendete Labenszeit und das alte System hätte auch funktioniert? - Ja" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
