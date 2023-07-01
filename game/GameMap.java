@@ -76,52 +76,7 @@ public class GameMap extends GameObject{
 					DEFAULT_MAP[y][x] = 1;
 				}
 				else if(randomNumber < 5){
-					boolean full = false;
-					int ydistance;
-					int xdistance;
-
-					if(y < 3 || y > getHeight() - 3){
-						ydistance = 0;
-					}else {
-						ydistance = 2;
-					}
-					if(x < 3 || x > getHeight() - 3){
-						xdistance = 0;
-					}else {
-						xdistance = 2;
-					}
-
-					for(int i = y - ydistance; i <= y; i++) {
-						if (DEFAULT_MAP[i][x] == 2) {
-							DEFAULT_MAP[y][x] = 1;
-							full = true;
-							System.out.println("1");
-						}
-					}
-					for(int i = x - xdistance; i <= x; i++) {
-						if (DEFAULT_MAP[y][i] == 2) {
-							DEFAULT_MAP[y][x] = 1;
-							full = true;
-							System.out.println("2");
-						}
-					}
-					for(int i = y + ydistance; i >= y; i--) {
-						if (DEFAULT_MAP[i][x] == 2) {
-							DEFAULT_MAP[y][x] = 1;
-							full = true;
-							System.out.println("3");
-						}
-					}
-					for(int i = x + xdistance; i >= x; i--) {
-						if (DEFAULT_MAP[y][i] == 2) {
-							DEFAULT_MAP[y][x] = 1;
-							full = true;
-							System.out.println("4");
-						}
-					}
-					if(!full) {
-						DEFAULT_MAP[y][x] = 2;
-					}
+					rockPattern(y ,x);
 				}
 				else {
 					DEFAULT_MAP[y][x] = 1;
@@ -132,6 +87,141 @@ public class GameMap extends GameObject{
 		fillMap();
 	}
 
+	private void rockPattern(int y, int x){ //Steinanordnung, mit zufälligen Abständen
+		Random random = new Random();
+		int randomNumber = random.nextInt(100);
+		int randomDistance = random.nextInt(100);
+
+		if(randomNumber < 33){ // 3er-Steine
+			if(rockDistance2(y, x)){
+				DEFAULT_MAP[y][x] = 2;
+				rockPatternDirection2(y, x);
+			}
+		}
+		else if(randomNumber <66){ // 2er-Steine
+			if(randomDistance < 25){
+				if(rockDistance1(y, x)){
+					DEFAULT_MAP[y][x] = 2;
+					rockPatternDirection1(y, x);
+				}
+			}
+			else{
+				if(rockDistance2(y, x)){
+					DEFAULT_MAP[y][x] = 2;
+					rockPatternDirection1(y, x);
+				}
+			}
+		}
+		else{ // 1er-Steine
+			if(randomDistance < 25){
+				if(rockDistance1(y, x)){
+					DEFAULT_MAP[y][x] = 2;
+				}
+			}
+			else{
+				if(rockDistance2(y, x)){
+					DEFAULT_MAP[y][x] = 2;
+				}
+			}
+		}
+	}
+
+	private void rockPatternDirection1(int y, int x){
+		Random random = new Random();
+		int direction1 = random.nextInt(4);
+		if(direction1 == 0){
+			DEFAULT_MAP[y-1][x] = 2;
+		}
+		else if(direction1 == 1){
+			DEFAULT_MAP[y][x+1] = 2;
+		}
+		else if(direction1 == 2){
+			DEFAULT_MAP[y+1][x] = 2;
+		}
+		else{
+			DEFAULT_MAP[y][x-1] = 2;
+		}
+	}
+
+	private void rockPatternDirection2(int y, int x){
+		rockPatternDirection1(y, x);
+		Random random = new Random();
+		int direction2 = random.nextInt(4);
+
+		if(direction2 == 0){
+			DEFAULT_MAP[y-1][x-1] = 2;
+		}
+		else if(direction2 == 1){
+			DEFAULT_MAP[y-1][x+1] = 2;
+		}
+		else if(direction2 == 2){
+			DEFAULT_MAP[y+1][x+1] = 2;
+		}
+		else{
+			DEFAULT_MAP[y+1][x-1] = 2;
+		}
+
+	}
+
+	private boolean rockDistance1(int y, int x){
+		if(y == 0 || y > getHeight() - 2 || x == 0 || x > getWidth() - 2){
+			return false;
+		}
+		if(y > 0 && y < getHeight() - 1){ // Abstände zwischen den Steinen
+			if(x > 0 && x < getWidth() - 1){
+				if(DEFAULT_MAP[y-1][x] == 2 || DEFAULT_MAP[y][x-1] == 2 || DEFAULT_MAP[y-1][x-1] == 2 || (x < getWidth() - 1 && DEFAULT_MAP[y-1][x+1] == 2)){
+					DEFAULT_MAP[y][x] = 1;
+					return false;
+				}
+				else {
+					return true;
+				}
+			}
+			else if(DEFAULT_MAP[y-1][x] == 2){
+				DEFAULT_MAP[y][x] = 1;
+				return false;
+			}
+			else {
+				return true;
+			}
+		}
+		else if(DEFAULT_MAP[y][x-1] == 2){
+			DEFAULT_MAP[y][x] = 1;
+			return false;
+		}
+		else {
+			return false;
+		}
+	}
+
+	private boolean rockDistance2(int y, int x){
+		if(rockDistance1(y, x)) {
+			if (y > 1 && y < getHeight() - 1) {
+				if (x > 1 && x < getWidth() - 1) {
+					if (DEFAULT_MAP[y - 2][x] == 2 || DEFAULT_MAP[y][x - 2] == 2 || DEFAULT_MAP[y - 2][x - 2] == 2 || DEFAULT_MAP[y - 2][x - 1] == 2 || DEFAULT_MAP[y - 1][x - 2] == 2 ||
+							((x < getWidth() - 3) && DEFAULT_MAP[y - 2][x + 1] == 2) || ((x < getWidth() - 3) && DEFAULT_MAP[y - 2][x + 2] == 2) || ((x < getWidth() - 3) && DEFAULT_MAP[y - 1][x + 2] == 2)) {
+						DEFAULT_MAP[y][x] = 1;
+						return false;
+					} else {
+						return true;
+					}
+				} else if (DEFAULT_MAP[y - 2][x] == 2) {
+					DEFAULT_MAP[y][x] = 1;
+					return false;
+				} else {
+					return true;
+				}
+			} else if (x > 1 && DEFAULT_MAP[y][x - 2] == 2) {
+				DEFAULT_MAP[y][x] = 1;
+				return false;
+			} else {
+				return true;
+			}
+		}
+		else{
+			return false;
+		}
+	}
 
 	//Hilfsmethoden
 	public int getWidth() {
