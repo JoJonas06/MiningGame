@@ -4,17 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c04b53fd-02c3-4db1-9b27-aeead0d64797" name="Changes" comment="Player läuft. Überprüfung der Wandkollisionen hat einen Bug (keine Ahnung wo)">
+    <list default="true" id="c04b53fd-02c3-4db1-9b27-aeead0d64797" name="Changes" comment="Random Rockpatterns.">
+      <change beforePath="$PROJECT_DIR$/game/Collision.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/Collision.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game/GameMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/GameMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/GameScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/ScreenTileSize.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game/objects/creatures/Creature.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/objects/creatures/Creature.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MiningGame/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_06_2023_23_58_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MiningGame/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_06_2023_23_58__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MiningGame/.idea/shelf/Uncommitted_changes_before_Checkout_at_18_06_2023_00_00_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MiningGame/.idea/shelf/Uncommitted_changes_before_Checkout_at_18_06_2023_00_00__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/objects/creatures/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/objects/creatures/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/objects/tiles/Air.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/objects/tiles/Air.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/objects/tiles/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/objects/tiles/Block.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/objects/tiles/Rock.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/objects/tiles/Rock.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MiningGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MiningGame/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MiningGame/game/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MiningGame/game/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MiningGame/game/GameMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MiningGame/game/GameMap.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MiningGame/game/GameScreen.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MiningGame/game/objects/creatures/Creature.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MiningGame/game/objects/creatures/Creature.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MiningGame/game/objects/creatures/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MiningGame/game/objects/creatures/Player.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,11 +68,12 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;TODO_SCOPE&quot;: &quot;All Places&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.excludes&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.editor&quot;
   }
 }</component>
   <component name="RunManager" selected="Application.Game">
@@ -85,8 +90,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GameScreen" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="game.GameScreen" />
+    <configuration name="ScreenTileSize" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="game.ScreenTileSize" />
       <module name="MiningGame" />
       <extension name="coverage">
         <pattern>
@@ -101,10 +106,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Game" />
-        <item itemvalue="Application.GameScreen" />
+        <item itemvalue="Application.ScreenTileSize" />
+        <item itemvalue="Application.ScreenTileSize" />
         <item itemvalue="Application.Game" />
-        <item itemvalue="Application.GameScreen" />
-        <item itemvalue="Application.Game" />
+        <item itemvalue="Application.ScreenTileSize" />
       </list>
     </recent_temporary>
   </component>
@@ -292,7 +297,91 @@
       <option name="project" value="LOCAL" />
       <updated>1687625970965</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Collisons und Player Movement funktionieren.">
+      <created>1687817871774</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1687817871774</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Collisons und Player Movement funktionieren.">
+      <created>1687890548844</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1687890548845</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Anfang generierte Map mit Zufall.">
+      <created>1687902414213</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1687902414213</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Rock hinzugefügt. Random Generierung.">
+      <created>1687993825506</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1687993825506</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Ich hab doch auch keine Ahnung mehr">
+      <created>1688071841263</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1688071841263</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Wie es funktioniert? - Keine ahnung. Wie ich darauf gekommen bin? - Keine Ahnung. Aber der Player läuft jetzt mit W zur Maus.&#10;War es verschwendete Labenszeit und das alte System hätte auch funktioniert? - Ja">
+      <created>1688140970618</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1688140970618</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Wie es funktioniert? - Keine ahnung. Wie ich darauf gekommen bin? - Keine Ahnung. Aber der Player läuft jetzt mit W zur Maus.&#10;War es verschwendete Labenszeit und das alte System hätte auch funktioniert? - Ja">
+      <created>1688141042985</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1688141042985</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Wie es funktioniert? - Keine ahnung. Wie ich darauf gekommen bin? - Keine Ahnung. Aber der Player läuft jetzt mit W zur Maus.&#10;War es verschwendete Labenszeit und das alte System hätte auch funktioniert? - Ja">
+      <created>1688141127064</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1688141127064</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Wie es funktioniert? - Keine ahnung. Wie ich darauf gekommen bin? - Keine Ahnung. Aber der Player läuft jetzt mit W zur Maus.&#10;War es verschwendete Labenszeit und das alte System hätte auch funktioniert? - Ja">
+      <created>1688141221238</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1688141221238</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Wie es funktioniert? - Keine ahnung. Wie ich darauf gekommen bin? - Keine Ahnung. Aber der Player läuft jetzt mit W zur Maus.&#10;War es verschwendete Labenszeit und das alte System hätte auch funktioniert? - Ja">
+      <created>1688141441582</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1688141441582</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Randomizer funktioniert noch nicht ganz, aber Anfang steht.">
+      <created>1688156718711</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1688156718711</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Random Rockpatterns.">
+      <created>1688249539559</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1688249539559</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -301,6 +390,16 @@
         <entry key="Branch">
           <value>
             <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="MapAutomatisierung_und_KameraVerfolgung" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="master" />
+                </option>
+              </RecentGroup>
               <RecentGroup>
                 <option name="FILTER_VALUES">
                   <option value="PlayerMovement" />
@@ -314,11 +413,6 @@
               <RecentGroup>
                 <option name="FILTER_VALUES">
                   <option value="origin/master" />
-                </option>
-              </RecentGroup>
-              <RecentGroup>
-                <option name="FILTER_VALUES">
-                  <option value="master" />
                 </option>
               </RecentGroup>
               <RecentGroup>
@@ -346,11 +440,6 @@
                   <option value="KeyHandlerPlayer" />
                 </option>
               </RecentGroup>
-              <RecentGroup>
-                <option name="FILTER_VALUES">
-                  <option value="HEAD" />
-                </option>
-              </RecentGroup>
             </list>
           </value>
         </entry>
@@ -373,7 +462,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="PlayerMovement" />
+                        <option value="MapAutomatisierung_und_KameraVerfolgung" />
                       </list>
                     </value>
                   </entry>
@@ -401,7 +490,14 @@
     <MESSAGE value="Player Bewegung angepasst (nuch großer Bug vorhanden) und Hände hinzugefügt" />
     <MESSAGE value="Bug behoben. Player läuft gut" />
     <MESSAGE value="Player läuft. Überprüfung der Wandkollisionen hat einen Bug (keine Ahnung wo)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Player läuft. Überprüfung der Wandkollisionen hat einen Bug (keine Ahnung wo)" />
+    <MESSAGE value="Collisons und Player Movement funktionieren." />
+    <MESSAGE value="Anfang generierte Map mit Zufall." />
+    <MESSAGE value="Rock hinzugefügt. Random Generierung." />
+    <MESSAGE value="Ich hab doch auch keine Ahnung mehr" />
+    <MESSAGE value="Wie es funktioniert? - Keine ahnung. Wie ich darauf gekommen bin? - Keine Ahnung. Aber der Player läuft jetzt mit W zur Maus.&#10;War es verschwendete Labenszeit und das alte System hätte auch funktioniert? - Ja" />
+    <MESSAGE value="Randomizer funktioniert noch nicht ganz, aber Anfang steht." />
+    <MESSAGE value="Random Rockpatterns." />
+    <option name="LAST_COMMIT_MESSAGE" value="Random Rockpatterns." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
