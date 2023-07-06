@@ -4,14 +4,27 @@ import game.objects.creatures.Player;
 import game.objects.tiles.Air;
 import game.objects.tiles.Rock;
 import game.objects.tiles.Tile;
+import game.objects.tiles.Water;
 
 public class Collision {
 
-    public static boolean wallCollision(Game game){
+    public static void waterCollision(Game game){
         GameMap map = game.getMap();
         Player player = game.getPlayer();
+        Tile[][] tiles = map.getTiles();
 
-        return (player.getCenterX() < 0.38 || player.getCenterX() > map.getWidth() - 1 || player.getCenterY() < 0.38 || player.getCenterY() > map.getHeight() - 1);
+        if(tiles[(int) (player.getScreenY() - 0.38)] [(int) player.getScreenX()] instanceof Water){
+            player.setScreenY(player.getScreenY() + 0.1);
+        }
+        if(tiles[(int) (player.getScreenY() + 0.38)] [(int) player.getScreenX()] instanceof Water){
+            player.setScreenY(player.getScreenY() - 0.1);
+        }
+        if(tiles[(int) player.getScreenY()] [(int) (player.getScreenX() - 0.38)] instanceof Water){
+            player.setScreenX(player.getScreenX() + 0.1);
+        }
+        if(tiles[(int) player.getScreenY()] [(int) (player.getScreenX() + 0.38)] instanceof Water){
+            player.setScreenX(player.getScreenX() - 0.1);
+        }
     }
 
     public static void airCollision(Game game){
@@ -19,17 +32,17 @@ public class Collision {
         Player player = game.getPlayer();
         Tile[][] tiles = map.getTiles();
 
-        if(tiles[(int) (player.getCenterY() - 0.38)] [(int) player.getCenterX()] instanceof Air){
-            player.setCenterY(player.getCenterY() + 0.1);
+        if(tiles[(int) (player.getScreenY() - 0.38)] [(int) player.getScreenX()] instanceof Air){
+            player.setScreenY(player.getScreenY() + 0.1);
         }
-        if(tiles[(int) (player.getCenterY() + 0.38)] [(int) player.getCenterX()] instanceof Air){
-            player.setCenterY(player.getCenterY() - 0.1);
+        if(tiles[(int) (player.getScreenY() + 0.38)] [(int) player.getScreenX()] instanceof Air){
+            player.setScreenY(player.getScreenY() - 0.1);
         }
-        if(tiles[(int) player.getCenterY()] [(int) (player.getCenterX() - 0.38)] instanceof Air){
-            player.setCenterX(player.getCenterX() + 0.1);
+        if(tiles[(int) player.getScreenY()] [(int) (player.getScreenX() - 0.38)] instanceof Air){
+            player.setScreenX(player.getScreenX() + 0.1);
         }
-        if(tiles[(int) player.getCenterY()] [(int) (player.getCenterX() + 0.38)] instanceof Air){
-            player.setCenterX(player.getCenterX() - 0.1);
+        if(tiles[(int) player.getScreenY()] [(int) (player.getScreenX() + 0.38)] instanceof Air){
+            player.setScreenX(player.getScreenX() - 0.1);
         }
     }
 
@@ -38,17 +51,17 @@ public class Collision {
         Player player = game.getPlayer();
         Tile[][] tiles = map.getTiles();
 
-        if(tiles[(int) (player.getCenterY() - 0.38)] [(int) player.getCenterX()] instanceof Rock){
-            player.setCenterY(player.getCenterY() + 0.1);
+        if(tiles[(int) (player.getScreenY() - 0.38)] [(int) player.getScreenX()] instanceof Rock){
+            player.setScreenY(player.getScreenY() + 0.1);
         }
-        if(tiles[(int) (player.getCenterY() + 0.38)] [(int) player.getCenterX()] instanceof Rock){
-            player.setCenterY(player.getCenterY() - 0.1);
+        if(tiles[(int) (player.getScreenY() + 0.38)] [(int) player.getScreenX()] instanceof Rock){
+            player.setScreenY(player.getScreenY() - 0.1);
         }
-        if(tiles[(int) player.getCenterY()] [(int) (player.getCenterX() - 0.38)] instanceof Rock){
-            player.setCenterX(player.getCenterX() + 0.1);
+        if(tiles[(int) player.getScreenY()] [(int) (player.getScreenX() - 0.38)] instanceof Rock){
+            player.setScreenX(player.getScreenX() + 0.1);
         }
-        if(tiles[(int) player.getCenterY()] [(int) (player.getCenterX() + 0.38)] instanceof Rock){
-            player.setCenterX(player.getCenterX() - 0.1);
+        if(tiles[(int) player.getScreenY()] [(int) (player.getScreenX() + 0.38)] instanceof Rock){
+            player.setScreenX(player.getScreenX() - 0.1);
         }
     }
 }

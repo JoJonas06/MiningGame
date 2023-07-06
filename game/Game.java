@@ -14,12 +14,11 @@ public class Game extends JFrame {
 
 	public Game() {
 		super("MiningGame");
-		GameScreen gameScreen = new GameScreen();
+		ScreenTileSize screenTileSize = new ScreenTileSize();
 		//Initialisierungen
 		display = new Display(this);
-		map = new GameMap(gameScreen.getScreenTileSize());
-							//game	 	centerX 				centerY 				 radius
-		player = new Player(this, (map.getWidth() * 0.5), (map.getHeight() * 0.5), (map.getTileSize() * 0.5));
+		map = new GameMap(screenTileSize.getScreenTileSize());
+		player = new Player(this);
 		//KeyListener
 		GameKeyListener gameKeyListener = new GameKeyListener(this);
 		addKeyListener(player);
@@ -50,6 +49,7 @@ public class Game extends JFrame {
 	}
 
 	public void tick(){
+		map.fillMap(player);
 		player.tick();
 	}
 

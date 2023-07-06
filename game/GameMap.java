@@ -2,17 +2,14 @@ package game;
 
 import game.objects.GameObject;
 import game.objects.creatures.Player;
-import game.objects.tiles.Air;
-import game.objects.tiles.Block;
-import game.objects.tiles.Rock;
-import game.objects.tiles.Tile;
+import game.objects.tiles.*;
 
 import java.awt.*;
 import java.util.Random;
 
 public class GameMap extends GameObject{
 
-	public static int[][] DEFAULT_MAP = new int[27][48];
+	public static int[][] DEFAULT_MAP = new int[110][110];
 
 	private final double tileSize;
 	
@@ -40,22 +37,57 @@ public class GameMap extends GameObject{
 		}
 	}
 
-	private void fillMap(){
+	public void fillMap(Player player){
 		for (int y = 0; y < getHeight(); y++) {
 			for (int x = 0; x < getWidth(); x++) {
+
+				double worldX = x * tileSize;
+				double worldY = y * tileSize;
+				double screenX = worldX + player.getWorldX() - player.getScreenX() * tileSize;
+				double screenY = worldY + player.getWorldY() - player.getScreenY() * tileSize;
+
 				tiles[y][x] = switch (DEFAULT_MAP[y][x]) {
-					case 1 -> new Block(x, y);
-					case 2 -> new Rock(x, y,tileSize * 0.4);
-					default -> new Air(x, y);
+					case 1 -> new Block(screenX, screenY);
+					case 2 -> new Rock(screenX, screenY);
+					case 3 -> new Water(screenX, screenY);
+					default -> new Air(screenX, screenY);
 				};
 			}
 		}
 	}
 
+	// nur zur Ersterstellung
+	private void fillMap(){
+		for (int y = 0; y < getHeight(); y++) {
+			for (int x = 0; x < getWidth(); x++) {
+				tiles[y][x] = switch (DEFAULT_MAP[y][x]) {
+					case 1 -> new Block(x, y);
+					case 2 -> new Rock(x, y);
+					default -> new Air(x, y);
+				};
+			}
+		}
+	}
+	// nur zur Ersterstellung
 	private void startMap(){
 		for(int y = 0; y < getHeight(); y++) {
 			for (int x = 0; x < getWidth(); x++) {
-				DEFAULT_MAP[y][x] = 1;
+				DEFAULT_MAP[y][x] = 0;
+			}
+		}
+	}
+
+	private void checkMap(){
+		for(int y = 0; y < getHeight(); y++) {
+			for (int x = 0; x < getWidth(); x++) {
+				//Überprüft ob ein falsches Air Tile auf der Map ist
+				if(DEFAULT_MAP[y][x] == 0 && !(y == 0 && x == 0 || y == 0 && x == getWidth() - 1 || y == getHeight() - 1 && x == 0 || y == getHeight() - 1 && x == getWidth() - 1)){
+					DEFAULT_MAP[y][x] = 1;
+				}
+				//Überprüft ob ein falsches Rock Tile auf der Map ist
+				if(DEFAULT_MAP[y][x] == 2 && y < 14 || x < 25 || y > getHeight() - 14 ||  x > getWidth() - 25){
+					DEFAULT_MAP[y][x] = 3;
+				}
 			}
 		}
 	}
@@ -69,22 +101,23 @@ public class GameMap extends GameObject{
 
 				int randomNumber = random.nextInt(100);
 
-				if(y == 0 && x == 0 || y == 0 && x == getWidth() - 1 || y == getHeight() - 1 && x == 0 || y == getHeight() - 1 && x == getWidth() - 1){ //Ecken
-					DEFAULT_MAP[y][x] = 0;
+				if(y < 14 || x < 25 || y > getHeight() - 14 ||  x > getWidth() - 25){
+					DEFAULT_MAP[y][x] = 3;//Water
 				}
-				else if(y >= player.getCenterY() - 4 && y <= player.getCenterY() + 3 && x >= player.getCenterX() - 4 && x <= player.getCenterX() + 3) { //Bereich um Spawn
-					DEFAULT_MAP[y][x] = 1;
+				else if(y >= player.getScreenY() - 4 && y <= player.getScreenY() + 3 && x >= player.getScreenX() - 4 && x <= player.getScreenX() + 3) { //Bereich um Spawn
+					DEFAULT_MAP[y][x] = 1;//Block
 				}
-				else if(randomNumber < 5){
-					rockPattern(y ,x);
+				else if(randomNumber < 4){//Wahrscheinlichkeit der Steine
+					rockPattern(y ,x);//Rock
 				}
+
 				else {
 					DEFAULT_MAP[y][x] = 1;
 				}
 			}
 		}
-
-		fillMap();
+		checkMap(); //Falls Fehler auftauchen
+		fillMap(player);
 	}
 
 	private void rockPattern(int y, int x){ //Steinanordnung, mit zufälligen Abständen
@@ -119,7 +152,7 @@ public class GameMap extends GameObject{
 				}
 			}
 			else{
-				if(rockDistance2(y, x)){
+				if(rockDistance2(y, x)) {
 					DEFAULT_MAP[y][x] = 2;
 				}
 			}
@@ -164,54 +197,23 @@ public class GameMap extends GameObject{
 	}
 
 	private boolean rockDistance1(int y, int x){
-		if(y == 0 || y > getHeight() - 2 || x == 0 || x > getWidth() - 2){
+		if((DEFAULT_MAP[y-1][x] == 3) || (DEFAULT_MAP[y+1][x] == 3 || DEFAULT_MAP[y][x-1] == 3) || (DEFAULT_MAP[y][x+1] == 3)){
 			return false;
 		}
-		if(y > 0 && y < getHeight() - 1){ // Abstände zwischen den Steinen
-			if(x > 0 && x < getWidth() - 1){
-				if(DEFAULT_MAP[y-1][x] == 2 || DEFAULT_MAP[y][x-1] == 2 || DEFAULT_MAP[y-1][x-1] == 2 || (x < getWidth() - 1 && DEFAULT_MAP[y-1][x+1] == 2)){
-					DEFAULT_MAP[y][x] = 1;
-					return false;
-				}
-				else {
-					return true;
-				}
-			}
-			else if(DEFAULT_MAP[y-1][x] == 2){
-				DEFAULT_MAP[y][x] = 1;
-				return false;
-			}
-			else {
-				return true;
-			}
-		}
-		else if(DEFAULT_MAP[y][x-1] == 2){
+		if(DEFAULT_MAP[y-1][x] == 2 || DEFAULT_MAP[y][x-1] == 2 || DEFAULT_MAP[y-1][x-1] == 2 || (x < getWidth() - 1 && DEFAULT_MAP[y-1][x+1] == 2)){
 			DEFAULT_MAP[y][x] = 1;
 			return false;
 		}
 		else {
-			return false;
+			return true;
 		}
 	}
 
 	private boolean rockDistance2(int y, int x){
 		if(rockDistance1(y, x)) {
-			if (y > 1 && y < getHeight() - 1) {
-				if (x > 1 && x < getWidth() - 1) {
-					if (DEFAULT_MAP[y - 2][x] == 2 || DEFAULT_MAP[y][x - 2] == 2 || DEFAULT_MAP[y - 2][x - 2] == 2 || DEFAULT_MAP[y - 2][x - 1] == 2 || DEFAULT_MAP[y - 1][x - 2] == 2 ||
-							((x < getWidth() - 3) && DEFAULT_MAP[y - 2][x + 1] == 2) || ((x < getWidth() - 3) && DEFAULT_MAP[y - 2][x + 2] == 2) || ((x < getWidth() - 3) && DEFAULT_MAP[y - 1][x + 2] == 2)) {
-						DEFAULT_MAP[y][x] = 1;
-						return false;
-					} else {
-						return true;
-					}
-				} else if (DEFAULT_MAP[y - 2][x] == 2) {
-					DEFAULT_MAP[y][x] = 1;
-					return false;
-				} else {
-					return true;
-				}
-			} else if (x > 1 && DEFAULT_MAP[y][x - 2] == 2) {
+
+			if(DEFAULT_MAP[y - 2][x] == 2 || DEFAULT_MAP[y][x - 2] == 2 || DEFAULT_MAP[y - 2][x - 2] == 2 || DEFAULT_MAP[y - 2][x - 1] == 2 || DEFAULT_MAP[y - 1][x - 2] == 2 ||
+					((x < getWidth() - 3) && DEFAULT_MAP[y - 2][x + 1] == 2) || ((x < getWidth() - 3) && DEFAULT_MAP[y - 2][x + 2] == 2) || ((x < getWidth() - 3) && DEFAULT_MAP[y - 1][x + 2] == 2)) {
 				DEFAULT_MAP[y][x] = 1;
 				return false;
 			} else {
@@ -225,11 +227,11 @@ public class GameMap extends GameObject{
 
 	//Hilfsmethoden
 	public int getWidth() {
-		return tiles[0].length;
+		return DEFAULT_MAP[0].length;
 	}
 	
 	public int getHeight() {
-		return tiles.length;
+		return DEFAULT_MAP.length;
 	}
 	
 	public double getTileSize() {

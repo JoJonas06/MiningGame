@@ -10,21 +10,32 @@ import game.GameMap;
 
 public class Player extends Creature implements KeyListener, MouseMotionListener {
 
-	public Player(Game game, double centerX, double centerY, double radius) {
-		super(game, centerX, centerY, radius, 0.07, Color.RED, 10);
+	private final GameMap map = game.getMap();
+
+	public Player(Game game) {
+		super(game, 0, 0, 0, 0.07, Color.RED, 10);
+
+		//Koordinaten zwischen 0 und Map-Length (Kamera - Sichtefeld)
+		screenX = (double) map.getWidth() / 2;
+		screenY = (double) map.getHeight() / 2;
+		radius = map. getTileSize() / 2;
+
+		setDefaultValues();
+	}
+
+	private void setDefaultValues(){//Koordinaten in Pixeln
+		worldX = 24 * map.getTileSize();
+		worldY = 13.5 * map.getTileSize();
 	}
 
 	@Override
 	public void render(Graphics2D g, double tileSize) {
-		double centerXOnScreen = centerX * tileSize;
-		double centerYOnScreen = centerY * tileSize;
 		double diameterOnScreen = radius * 2.0;
-
 		AffineTransform oldTransform = g.getTransform(); // Aktuelle Transformation speichern
 
 		// Neue Transformation erstellen und auf den Spieler anwenden
 		AffineTransform transform = new AffineTransform();
-		transform.translate(centerXOnScreen, centerYOnScreen); // Translation zur Mitte des Spielers
+		transform.translate(worldX, worldY); // Translation zur Mitte des Spielers
 		transform.rotate((rotation + Math.PI/2)); // Rotation um die Mitte des Spielers
 		g.setTransform(transform);
 
@@ -69,18 +80,16 @@ public class Player extends Creature implements KeyListener, MouseMotionListener
 
 	@Override
 	public void mouseMoved(MouseEvent e) {
-		GameMap map = game.getMap();
 		Player player = game.getPlayer();
 
-		double mouseX = e.getX() / map.getTileSize();
-		double mouseY = e.getY() / map.getTileSize();
-		double playerX = getCenterX();
-		double playerY = getCenterY();
+		double mouseX = (e.getX());
+		double mouseY = (e.getY());
+		double playerX = getWorldX();
+		double playerY = getWorldY();
 		double atan2;
 
 		atan2 = Math.toDegrees(Math.atan2((mouseY - playerY), (mouseX - playerX)));
 		rotation = (atan2 * Math.PI * 2) / 360; // Wie das geht? - Keine Ahnung, (zufällige Idee aus Verzweiflung)
-
 
 		/* Debug:
 		System.out.println("rotation: " + rotation);
@@ -88,6 +97,5 @@ public class Player extends Creature implements KeyListener, MouseMotionListener
 		System.out.println("▲Y: " + (mouseY - playerY) + ", ▲X: " + (mouseX - playerX));
 		System.out.println("atan: " + atan2);
 		*/
-
 	}
 }
