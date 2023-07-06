@@ -35,7 +35,6 @@ public abstract class Creature extends GameObject{
 	}
 
 	public void tick() {
-		GameMap map = game.getMap();
 		tickMovingDirection();
 
 		screenX += movingDirectionX * speed;

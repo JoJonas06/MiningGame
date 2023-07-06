@@ -17,4 +17,5 @@ public abstract class Tile extends GameObject {
 	}
 
 	public abstract void render(Graphics2D g, double tileSize);
+
 }

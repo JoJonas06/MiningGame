@@ -7,6 +7,7 @@ import java.awt.geom.Ellipse2D;
 
 import game.Game;
 import game.GameMap;
+import game.objects.tiles.Tile;
 
 public class Player extends Creature implements KeyListener, MouseMotionListener {
 
@@ -51,6 +52,37 @@ public class Player extends Creature implements KeyListener, MouseMotionListener
 		g.setTransform(oldTransform); // Vorherige Transformation wiederherstellen
 	}
 
+	private Tile nextTile(double atan2){
+		Tile[][] tiles = map.getTiles();
+		Tile tile;
+
+		if(atan2 >= -22.5 && atan2 < 22.5) {
+			tile = tiles[(int)(screenY)][(int)(screenX + 1)];
+		}
+		else if(atan2 >= 22.5 && atan2 < 67.5){
+			tile = tiles[(int)(screenY - 1)][(int)(screenX + 1)];
+		}
+		else if(atan2 >= 67.5 && atan2 < 112.5){
+			tile = tiles[(int)(screenY + 1)][(int)(screenX)];
+		}
+		else if(atan2 >= 112.5 && atan2 < 167.5){
+			tile = tiles[(int)(screenY + 1)][(int)(screenX - 1)];
+		}
+		else if(atan2 >= 167.5 || atan2 < -157.5){
+			tile = tiles[(int)(screenY)][(int)(screenX - 1)];
+		}
+		else if(atan2 >= -157.5 && atan2 < -112.5){
+			tile = tiles[(int)(screenY - 1)][(int)(screenX - 1)];
+		}
+		else if(atan2 >= -112.5 && atan2 < -67.5){
+			tile = tiles[(int)(screenY - 1)][(int)(screenX)];
+		}
+		else{
+			tile = tiles[(int)(screenY + 1)][(int)(screenX + 1)];
+		}
+
+		return tile;
+	}
 
 	@Override
 	public void keyTyped(KeyEvent e) {
@@ -90,6 +122,7 @@ public class Player extends Creature implements KeyListener, MouseMotionListener
 
 		atan2 = Math.toDegrees(Math.atan2((mouseY - playerY), (mouseX - playerX)));
 		rotation = (atan2 * Math.PI * 2) / 360; // Wie das geht? - Keine Ahnung, (zufällige Idee aus Verzweiflung)
+		nextTile(atan2);
 
 		/* Debug:
 		System.out.println("rotation: " + rotation);
