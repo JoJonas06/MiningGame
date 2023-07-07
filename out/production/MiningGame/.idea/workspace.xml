@@ -4,21 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c04b53fd-02c3-4db1-9b27-aeead0d64797" name="Changes" comment="Random Rockpatterns.">
-      <change beforePath="$PROJECT_DIR$/game/Collision.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/Collision.java" afterDir="false" />
+    <list default="true" id="c04b53fd-02c3-4db1-9b27-aeead0d64797" name="Changes" comment="Tile erkennung um den player herum">
+      <change afterPath="$PROJECT_DIR$/game/objects/tiles/Highlighted.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game/GameMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/GameMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/GameScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/ScreenTileSize.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game/objects/creatures/Creature.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/objects/creatures/Creature.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game/objects/creatures/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/objects/creatures/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/objects/tiles/Air.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/objects/tiles/Air.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game/objects/tiles/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/objects/tiles/Block.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game/objects/tiles/Rock.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/objects/tiles/Rock.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MiningGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MiningGame/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MiningGame/game/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MiningGame/game/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MiningGame/game/GameScreen.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MiningGame/game/objects/creatures/Creature.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MiningGame/game/objects/creatures/Creature.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MiningGame/game/objects/creatures/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MiningGame/game/objects/creatures/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MiningGame/game/objects/tiles/Block.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MiningGame/game/objects/tiles/Block.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,6 +88,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="GameScreen" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="game.GameScreen" />
+      <module name="MiningGame" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="game.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ScreenTileSize" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="game.ScreenTileSize" />
       <module name="MiningGame" />
@@ -106,9 +117,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Game" />
-        <item itemvalue="Application.ScreenTileSize" />
-        <item itemvalue="Application.ScreenTileSize" />
+        <item itemvalue="Application.GameScreen" />
         <item itemvalue="Application.Game" />
+        <item itemvalue="Application.ScreenTileSize" />
         <item itemvalue="Application.ScreenTileSize" />
       </list>
     </recent_temporary>
@@ -381,7 +392,21 @@
       <option name="project" value="LOCAL" />
       <updated>1688249539559</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Automatisierte Map Generierung und Kamera Funktion. Neues Player Movement.">
+      <created>1688676156427</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1688676156427</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Tile erkennung um den player herum">
+      <created>1688683673479</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1688683673479</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -390,6 +415,11 @@
         <entry key="Branch">
           <value>
             <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="TileDetection_PlayerMining" />
+                </option>
+              </RecentGroup>
               <RecentGroup>
                 <option name="FILTER_VALUES">
                   <option value="MapAutomatisierung_und_KameraVerfolgung" />
@@ -435,11 +465,6 @@
                   <option value="origin/Update-Funktion-im-Game-(Test)" />
                 </option>
               </RecentGroup>
-              <RecentGroup>
-                <option name="FILTER_VALUES">
-                  <option value="KeyHandlerPlayer" />
-                </option>
-              </RecentGroup>
             </list>
           </value>
         </entry>
@@ -462,7 +487,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="MapAutomatisierung_und_KameraVerfolgung" />
+                        <option value="TileDetection_PlayerMining" />
                       </list>
                     </value>
                   </entry>
@@ -497,7 +522,9 @@
     <MESSAGE value="Wie es funktioniert? - Keine ahnung. Wie ich darauf gekommen bin? - Keine Ahnung. Aber der Player läuft jetzt mit W zur Maus.&#10;War es verschwendete Labenszeit und das alte System hätte auch funktioniert? - Ja" />
     <MESSAGE value="Randomizer funktioniert noch nicht ganz, aber Anfang steht." />
     <MESSAGE value="Random Rockpatterns." />
-    <option name="LAST_COMMIT_MESSAGE" value="Random Rockpatterns." />
+    <MESSAGE value="Automatisierte Map Generierung und Kamera Funktion. Neues Player Movement." />
+    <MESSAGE value="Tile erkennung um den player herum" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tile erkennung um den player herum" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -1,10 +1,7 @@
 package game.objects.creatures;
 
-import java.awt.*;
-
 import game.Collision;
 import game.Game;
-import game.GameMap;
 import game.objects.GameObject;
 
 public abstract class Creature extends GameObject{
@@ -16,7 +13,6 @@ public abstract class Creature extends GameObject{
 	protected double worldY;
 	protected double speed;
 	protected double radius;
-	protected Color color;
 	protected int moveForward;
 	protected double rotation;
 	protected double rotationSpeed;
@@ -24,31 +20,16 @@ public abstract class Creature extends GameObject{
 	protected double movingDirectionY;
 	
 	
-	public Creature(Game game, double screenX, double screenY, double radius, double speed, Color color, double rotationSpeed) {
+	public Creature(Game game, double screenX, double screenY, double radius, double speed, double rotationSpeed) {
 		this.game = game;
 		this.screenX = screenX;
 		this.screenY = screenY;
 		this.radius = radius;
 		this.speed = speed;
-		this.color = color;
 		this.rotationSpeed = rotationSpeed;
 	}
 
-	public void tick() {
-		tickMovingDirection();
-
-		screenX += movingDirectionX * speed;
-		screenY += movingDirectionY * speed;
-
-		Collision.waterCollision(game);
-		Collision.rockCollision(game);
-		Collision.airCollision(game);
-	}
-
-	private void tickMovingDirection() {
-		movingDirectionX = Math.cos(rotation) * moveForward;
-		movingDirectionY = Math.sin(rotation) * moveForward;
-	}
+	public abstract void tick();
 
 	public double getScreenX() {
 		return screenX;

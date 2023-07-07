@@ -19,11 +19,13 @@ public class Game extends JFrame {
 		display = new Display(this);
 		map = new GameMap(screenTileSize.getScreenTileSize());
 		player = new Player(this);
+
 		//KeyListener
 		GameKeyListener gameKeyListener = new GameKeyListener(this);
 		addKeyListener(player);
 		addKeyListener(gameKeyListener);
 		addMouseMotionListener(player);
+
     	//Display
 		display.requestFocusInWindow();
 		getContentPane().add(display);
