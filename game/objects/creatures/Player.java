@@ -35,19 +35,19 @@ public class Player extends Creature implements KeyListener, MouseMotionListener
 
 	private Image generateImage() {
 		try {
-			characterImage = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("133971.png")));
+			return ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/game/objects/creatures/133971.png")));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 
-		return characterImage;
+		return null;
 	}
 
 
 
 
 
-	private Image characterImage = generateImage();
+	private Image characterImage;
 
 
 
@@ -57,6 +57,7 @@ public class Player extends Creature implements KeyListener, MouseMotionListener
 	public Player(Game game) {
 		super(game, 0, 0, 0, 0.07, Color.red, 10);
 		this.map = game.getMap();
+		this.characterImage = generateImage();
 
 
 

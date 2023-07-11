@@ -18,6 +18,9 @@ public class Game extends JFrame {
 	private final Player player;
 
 
+	private TitleScreen titleScreen;
+
+
 
 	private final Display display;
 
@@ -32,6 +35,12 @@ public class Game extends JFrame {
 		display = new Display(this);
 		player = new Player(this);
 		// Player zuerst erstellen
+
+		titleScreen = new TitleScreen(this);
+		getContentPane().add(titleScreen);
+
+		setVisible(true);
+
 
 		//KeyListener
 		GameKeyListener gameKeyListener = new GameKeyListener(this);
@@ -58,7 +67,7 @@ public class Game extends JFrame {
 
 
 
-	private void startGameLoop() { // Wird X mal pro Sekunde ausgeführt
+	void startGameLoop() { // Wird X mal pro Sekunde ausgeführt
 		Executors.newSingleThreadScheduledExecutor().scheduleAtFixedRate(() -> {
 			tick();
 			display.repaint(); // Wichtig, um das Display zu aktualisieren
