@@ -16,15 +16,17 @@ public class Game extends JFrame {
 		super("MiningGame");
 		ScreenTileSize screenTileSize = new ScreenTileSize();
 		//Initialisierungen
-		display = new Display(this);
 		map = new GameMap(screenTileSize.getScreenTileSize());
+		display = new Display(this);
 		player = new Player(this);
+		// Player zuerst erstellen
+
 		//KeyListener
 		GameKeyListener gameKeyListener = new GameKeyListener(this);
 		addKeyListener(player);
 		addKeyListener(gameKeyListener);
 		addMouseMotionListener(player);
-    	//Display
+		//Display
 		display.requestFocusInWindow();
 		getContentPane().add(display);
 		setSize(1080, 720);
