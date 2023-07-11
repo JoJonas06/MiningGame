@@ -4,19 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c04b53fd-02c3-4db1-9b27-aeead0d64797" name="Changes" comment="Tile erkennung um den player herum">
-      <change afterPath="$PROJECT_DIR$/game/objects/tiles/Highlighted.java" afterDir="false" />
+    <list default="true" id="c04b53fd-02c3-4db1-9b27-aeead0d64797" name="Changes" comment="Highlight Tile vor dem Player">
+      <change beforePath="$PROJECT_DIR$/game/Collision.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/Collision.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game/GameMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/GameMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/objects/creatures/Creature.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/objects/creatures/Creature.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game/objects/creatures/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/objects/creatures/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/objects/tiles/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/objects/tiles/Block.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game/objects/tiles/Rock.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/objects/tiles/Rock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/objects/tiles/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/objects/tiles/Tile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/objects/tiles/Water.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/objects/tiles/Water.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MiningGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MiningGame/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MiningGame/game/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MiningGame/game/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MiningGame/game/objects/creatures/Creature.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MiningGame/game/objects/creatures/Creature.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MiningGame/game/GameMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MiningGame/game/GameMap.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MiningGame/game/objects/creatures/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MiningGame/game/objects/creatures/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MiningGame/game/objects/tiles/Air.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MiningGame/game/objects/tiles/Air.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MiningGame/game/objects/tiles/Block.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MiningGame/game/objects/tiles/Block.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MiningGame/game/objects/tiles/Tile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MiningGame/game/objects/tiles/Tile.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -406,7 +408,21 @@
       <option name="project" value="LOCAL" />
       <updated>1688683673479</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Highlight Tile vor dem Player">
+      <created>1688766369504</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1688766369504</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Highlight Tile vor dem Player">
+      <created>1688766441752</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1688766441752</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -524,7 +540,8 @@
     <MESSAGE value="Random Rockpatterns." />
     <MESSAGE value="Automatisierte Map Generierung und Kamera Funktion. Neues Player Movement." />
     <MESSAGE value="Tile erkennung um den player herum" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tile erkennung um den player herum" />
+    <MESSAGE value="Highlight Tile vor dem Player" />
+    <option name="LAST_COMMIT_MESSAGE" value="Highlight Tile vor dem Player" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

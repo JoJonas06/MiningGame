@@ -51,17 +51,18 @@ public class Collision {
         Player player = game.getPlayer();
         Tile[][] tiles = map.getTiles();
 
-        if(tiles[(int) (player.getScreenY() - 0.38)] [(int) player.getScreenX()] instanceof Rock){
-            player.setScreenY(player.getScreenY() + 0.1);
-        }
-        if(tiles[(int) (player.getScreenY() + 0.38)] [(int) player.getScreenX()] instanceof Rock){
-            player.setScreenY(player.getScreenY() - 0.1);
-        }
-        if(tiles[(int) player.getScreenY()] [(int) (player.getScreenX() - 0.38)] instanceof Rock){
-            player.setScreenX(player.getScreenX() + 0.1);
-        }
-        if(tiles[(int) player.getScreenY()] [(int) (player.getScreenX() + 0.38)] instanceof Rock){
-            player.setScreenX(player.getScreenX() - 0.1);
-        }
+
+            if (tiles[(int) (player.getScreenY() - 0.38)][(int) player.getScreenX()] instanceof Rock) {
+                player.setScreenY(player.getScreenY() + 0.1);
+            }
+            if (tiles[(int) (player.getScreenY() + 0.38)][(int) player.getScreenX()] instanceof Rock) {
+                player.setScreenY(player.getScreenY() - 0.1);
+            }
+            if (tiles[(int) player.getScreenY()][(int) (player.getScreenX() - 0.38)] instanceof Rock) {
+                player.setScreenX(player.getScreenX() + 0.1);
+            }
+            if (tiles[(int) player.getScreenY()][(int) (player.getScreenX() + 0.38)] instanceof Rock) {
+                player.setScreenX(player.getScreenX() - 0.1);
+            }
     }
 }

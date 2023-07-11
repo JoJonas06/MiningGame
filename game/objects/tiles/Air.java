@@ -17,4 +17,9 @@ public class Air extends Tile{
 
 	}
 
+	@Override
+	public void mine() {
+
+	}
+
 }

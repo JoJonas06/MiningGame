@@ -9,6 +9,7 @@ public abstract class Tile extends GameObject {
 	//Attribute
 	protected final double x;
 	protected final double y;
+	protected boolean collision = false;
 	
 	//Konstruktor
 	public Tile(double x, double y) {
@@ -20,4 +21,5 @@ public abstract class Tile extends GameObject {
 
 	public abstract void highlight(int a);
 
+	public abstract void mine();
 }

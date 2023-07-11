@@ -10,12 +10,14 @@ import game.Game;
 import game.GameMap;
 import game.objects.tiles.Tile;
 
-public class Player extends Creature implements KeyListener, MouseMotionListener, MouseListener {
+import javax.swing.*;
+
+public class Player extends Creature implements KeyListener, MouseMotionListener, MouseListener{
 
 	private final GameMap map = game.getMap();
 
 	public Player(Game game) {
-		super(game, 0, 0, 0, 0.07, 10);
+		super(game, 0, 0, 0, 0.05, 10);
 
 		//Koordinaten zwischen 0 und Map-Length (Kamera - Sichtefeld)
 		radius = map. getTileSize() / 2;
@@ -80,8 +82,8 @@ public class Player extends Creature implements KeyListener, MouseMotionListener
 
 	private void nextTile(double atan2){
 		Tile[][] tiles = map.getTiles();
-		Tile tile;
 
+		Tile tile;
 		if(atan2 >= -22.5 && atan2 < 22.5) {
 			tile = tiles[(int)(screenY)][(int)(screenX + 1)];
 		}
@@ -107,6 +109,7 @@ public class Player extends Creature implements KeyListener, MouseMotionListener
 			tile = tiles[(int)(screenY - 1)][(int)(screenX + 1)];
 		}
 		tile.highlight(175);
+
 	}
 
 	@Override
@@ -155,19 +158,30 @@ public class Player extends Creature implements KeyListener, MouseMotionListener
 		*/
 	}
 
+
 	@Override
 	public void mouseClicked(MouseEvent e) {
 
 	}
 
+	private Timer timer;
 	@Override
 	public void mousePressed(MouseEvent e) {
-
+		if (SwingUtilities.isLeftMouseButton(e)) {
+			timer = new Timer(200, evt -> {
+				timer.stop();
+			});
+			timer.start();
+		}
 	}
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
-
+		if (SwingUtilities.isLeftMouseButton(e)) {
+			if (timer != null && timer.isRunning()) {
+				timer.stop();
+			}
+		}
 	}
 
 	@Override

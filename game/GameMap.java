@@ -11,7 +11,6 @@ public class GameMap extends GameObject{
 
 	private final int[][] GAME_MAP = new int[110][110];
 	private final double tileSize;
-	
 	private final Tile[][] tiles;
 	
 	
@@ -236,6 +235,7 @@ public class GameMap extends GameObject{
 	public int[][] getGameMap(){
 		return GAME_MAP;
 	}
+
 	
 	public double getTileSize() {
 		return tileSize;

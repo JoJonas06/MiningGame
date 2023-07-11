@@ -25,6 +25,7 @@ public class Game extends JFrame {
 		addKeyListener(player);
 		addKeyListener(gameKeyListener);
 		addMouseMotionListener(player);
+		addMouseListener(player);
 
     	//Display
 		display.requestFocusInWindow();

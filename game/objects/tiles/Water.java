@@ -20,4 +20,10 @@ public class Water extends Tile{
     public void highlight(int a) {
         this.a = a;
     }
+
+    @Override
+    public void mine() {
+
+    }
+
 }
