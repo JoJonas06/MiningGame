@@ -5,12 +5,18 @@ import java.awt.*;
 
 public class Display extends JPanel {
 
+
+
+
 	private final Game game;
 	public Display(Game game) {
 		super();
 		this.game = game;
 
 	}
+
+
+
 	
 	@Override
 	public void paint(Graphics g) {
@@ -21,4 +27,7 @@ public class Display extends JPanel {
 		g2.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
 		game.render(g2);
 	}
+
+
+
 }

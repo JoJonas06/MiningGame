@@ -10,12 +10,27 @@ import java.io.IOException;
 import java.util.Objects;
 import javax.imageio.ImageIO;
 
+
+
+
+
+
+
 import game.Game;
 import game.GameMap;
 
+
 public class Player extends Creature implements KeyListener, MouseMotionListener {
 
+
+
+
+
+
 	private GameMap map = game.getMap();
+
+
+
 
 
 	private Image generateImage() {
@@ -29,7 +44,13 @@ public class Player extends Creature implements KeyListener, MouseMotionListener
 	}
 
 
+
+
+
 	private Image characterImage = generateImage();
+
+
+
 
 
 
@@ -55,7 +76,13 @@ public class Player extends Creature implements KeyListener, MouseMotionListener
 
 		
 	}
-	
+
+
+
+
+
+
+
 	
 	
 	private void generateMap() {
@@ -70,10 +97,24 @@ public class Player extends Creature implements KeyListener, MouseMotionListener
 
 
 
+
+
+
+
+
 	private void setDefaultValues(){//Koordinaten in Pixeln
 		worldX = 24 * map.getTileSize();
 		worldY = 13.5 * map.getTileSize();
 	}
+
+
+
+
+
+
+
+
+
 
 	@Override
 	public void render(Graphics2D g, double tileSize) {
@@ -103,10 +144,20 @@ public class Player extends Creature implements KeyListener, MouseMotionListener
 	}
 
 
+
+
+
+
+
 	@Override
 	public void keyTyped(KeyEvent e) {
 		//ignore
 	}
+
+
+
+
+
 
 	@Override
 	public void keyPressed(KeyEvent e) {
@@ -114,6 +165,10 @@ public class Player extends Creature implements KeyListener, MouseMotionListener
 			moveForward = 1;
 		}
 	}
+
+
+
+
 
 	@Override
 	public void keyReleased(KeyEvent e) {
@@ -124,10 +179,16 @@ public class Player extends Creature implements KeyListener, MouseMotionListener
 		}
 	}
 
+
+
+
 	@Override
 	public void mouseDragged(MouseEvent e) {
 
 	}
+
+
+
 
 	@Override
 	public void mouseMoved(MouseEvent e) {
@@ -152,7 +213,17 @@ public class Player extends Creature implements KeyListener, MouseMotionListener
 		*/
 	}
 
+
+
+
+
 	private void player_körper() {
 
 	}
+
+
+
+
+
+
 }

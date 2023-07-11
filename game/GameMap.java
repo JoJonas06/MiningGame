@@ -4,17 +4,32 @@ import game.objects.GameObject;
 import game.objects.creatures.Player;
 import game.objects.tiles.*;
 
+
+
+
 import java.awt.*;
 import java.util.Random;
 
 public class GameMap extends GameObject{
 
+
+
+
 	public static int[][] DEFAULT_MAP = new int[110][110];
 
+
+
+
 	private final double tileSize;
-	
+
+
+
+
 	private final Tile[][] tiles;
-	
+
+
+
+
 	
 	//Kontruktor
 	public GameMap(double tileSize) {
@@ -26,7 +41,10 @@ public class GameMap extends GameObject{
 		playerX = 5;
 		playerY = 5;
 	}
-	
+
+
+
+
 	//Methoden
 	@Override
 	public void render(Graphics2D g, double tileSize) {
@@ -36,6 +54,9 @@ public class GameMap extends GameObject{
 			}
 		}
 	}
+
+
+
 
 	public void fillMap(Player player){
 		for (int y = 0; y < getHeight(); y++) {
@@ -56,6 +77,9 @@ public class GameMap extends GameObject{
 		}
 	}
 
+
+
+
 	// nur zur Ersterstellung
 	private void fillMap(){
 		for (int y = 0; y < getHeight(); y++) {
@@ -68,6 +92,11 @@ public class GameMap extends GameObject{
 			}
 		}
 	}
+
+
+
+
+
 	// nur zur Ersterstellung
 	private void startMap(){
 		for(int y = 0; y < getHeight(); y++) {
@@ -76,6 +105,9 @@ public class GameMap extends GameObject{
 			}
 		}
 	}
+
+
+
 
 	private void checkMap(){
 		for(int y = 0; y < getHeight(); y++) {
@@ -91,6 +123,9 @@ public class GameMap extends GameObject{
 			}
 		}
 	}
+
+
+
 
 	public void generateMap(Game game){
 		Player player = game.getPlayer();
@@ -119,6 +154,9 @@ public class GameMap extends GameObject{
 		checkMap(); //Falls Fehler auftauchen
 		fillMap(player);
 	}
+
+
+
 
 	private void rockPattern(int y, int x){ //Steinanordnung, mit zufälligen Abständen
 		Random random = new Random();
@@ -159,6 +197,12 @@ public class GameMap extends GameObject{
 		}
 	}
 
+
+
+
+
+
+
 	private void rockPatternDirection1(int y, int x){
 		Random random = new Random();
 		int direction1 = random.nextInt(4);
@@ -175,6 +219,9 @@ public class GameMap extends GameObject{
 			DEFAULT_MAP[y][x-1] = 2;
 		}
 	}
+
+
+
 
 	private void rockPatternDirection2(int y, int x){
 		rockPatternDirection1(y, x);
@@ -196,6 +243,9 @@ public class GameMap extends GameObject{
 
 	}
 
+
+
+
 	private boolean rockDistance1(int y, int x){
 		if((DEFAULT_MAP[y-1][x] == 3) || (DEFAULT_MAP[y+1][x] == 3 || DEFAULT_MAP[y][x-1] == 3) || (DEFAULT_MAP[y][x+1] == 3)){
 			return false;
@@ -208,6 +258,9 @@ public class GameMap extends GameObject{
 			return true;
 		}
 	}
+
+
+
 
 	private boolean rockDistance2(int y, int x){
 		if(rockDistance1(y, x)) {
@@ -225,26 +278,47 @@ public class GameMap extends GameObject{
 		}
 	}
 
+
+
+
 	//Hilfsmethoden
 	public int getWidth() {
 		return DEFAULT_MAP[0].length;
 	}
-	
+
+
+
+
 	public int getHeight() {
 		return DEFAULT_MAP.length;
 	}
-	
+
+
+
+
 	public double getTileSize() {
 		return tileSize;
 	}
+
+
+
 
 	public Tile[][] getTiles(){
 		return tiles;
 	}
 
+
+
+
 	private int playerX; // Player's X coordinate
 
+
+
+
 	private int playerY; // Player's Y coordinate
+
+
+
 
 
 	public void setPlayerPosition(int x, int y) {

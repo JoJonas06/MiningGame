@@ -8,9 +8,21 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 public class Game extends JFrame {
+
+
+
 	private final GameMap map;
+
+
+
 	private final Player player;
+
+
+
 	private final Display display;
+
+
+
 
 	public Game() {
 		super("MiningGame");
@@ -43,6 +55,9 @@ public class Game extends JFrame {
 		startGameLoop();
 	}
 
+
+
+
 	private void startGameLoop() { // Wird X mal pro Sekunde ausgeführt
 		Executors.newSingleThreadScheduledExecutor().scheduleAtFixedRate(() -> {
 			tick();
@@ -50,12 +65,21 @@ public class Game extends JFrame {
 		}, 0L, 1000L / 120L, TimeUnit.MILLISECONDS); //FPS - festlegen
 	}
 
+
+
+
 	public void tick(){
 		map.fillMap(player);
 		player.tick();
 	}
 
+
+
+
 	private int rendertemp = 0;
+
+
+
 	public void render(Graphics2D g2) {
 		g2.setColor(Color.BLACK);
 		g2.fillRect(0, 0, getWidth(), getHeight());
@@ -70,16 +94,28 @@ public class Game extends JFrame {
 		player.render(g2, map.getTileSize());
 	}
 
+
+
+
 	public GameMap getMap() {
 		return map;
 	}
+
+
+
 	public Player getPlayer() {
 		return player;
 	}
+
+
+
 
 	public static void main(String[] args) {
 		new Game();
 		CoordinateSystem.coordinateSystem(400, 400);
 	}
+
+
+
 
 }
