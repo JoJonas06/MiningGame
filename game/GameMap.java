@@ -1,13 +1,12 @@
 package game;
 
-import game.objects.GameObject;
 import game.objects.creatures.Player;
 import game.objects.tiles.*;
 
 import java.awt.*;
 import java.util.Random;
 
-public class GameMap extends GameObject{
+public class GameMap{
 
 	private final int[][] GAME_MAP = new int[110][110];
 	private final double tileSize;
@@ -19,23 +18,13 @@ public class GameMap extends GameObject{
 		this.tileSize = tileSize;
 		tiles = new Tile[GAME_MAP.length][GAME_MAP[0].length];
 		startMap();
-		fillMap();
+		//fillMap();
 
 		playerX = 5;
 		playerY = 5;
 	}
-	
-	//Methoden
-	@Override
-	public void render(Graphics2D g, double tileSize) {
-		for (Tile[] row : tiles) {
-			for (Tile tile : row) {
-				tile.render(g, tileSize);
-			}
-		}
-	}
 
-	public void fillMap(Player player){
+	/*public void fillMap(Player player){
 		for (int y = 0; y < getHeight(); y++) {
 			for (int x = 0; x < getWidth(); x++) {
 
@@ -65,7 +54,9 @@ public class GameMap extends GameObject{
 				};
 			}
 		}
-	}
+	}*/
+
+
 	// nur zur Ersterstellung
 	private void startMap(){
 		for(int y = 0; y < getHeight(); y++) {
@@ -115,7 +106,7 @@ public class GameMap extends GameObject{
 			}
 		}
 		checkMap(); //Falls Fehler auftauchen
-		fillMap(player);
+		//fillMap(player);
 	}
 
 	private void rockPattern(int y, int x){ //Steinanordnung, mit zufälligen Abständen

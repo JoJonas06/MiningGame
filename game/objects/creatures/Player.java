@@ -32,7 +32,7 @@ public class Player extends Creature implements KeyListener, MouseMotionListener
 		worldY = 13.5 * map.getTileSize();
 	}
 
-	@Override
+
 	public void render(Graphics2D g, double tileSize) {
 		double diameterOnScreen = radius * 2.0;
 		AffineTransform oldTransform = g.getTransform(); // Aktuelle Transformation speichern
@@ -70,9 +70,9 @@ public class Player extends Creature implements KeyListener, MouseMotionListener
 
 		nextTile(atan2);
 
-		Collision.waterCollision(game);
-		Collision.rockCollision(game);
-		Collision.airCollision(game);
+		//Collision.waterCollision(game);
+		//Collision.rockCollision(game);
+		//Collision.airCollision(game);
 	}
 
 	private void tickMovingDirection() {
@@ -108,7 +108,7 @@ public class Player extends Creature implements KeyListener, MouseMotionListener
 		else{
 			tile = tiles[(int)(screenY - 1)][(int)(screenX + 1)];
 		}
-		tile.highlight(175);
+		//tile.highlight(175);
 
 	}
 

@@ -1,6 +1,7 @@
 package game;
 
 import game.objects.creatures.Player;
+import game.objects.tiles.TileManager;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,6 +13,8 @@ public class Game extends JFrame {
 	private final Player player;
 	private final Display display;
 
+	private final TileManager tileManager;
+
 	public Game() {
 		super("MiningGame");
 		ScreenTileSize screenTileSize = new ScreenTileSize();
@@ -19,6 +22,7 @@ public class Game extends JFrame {
 		display = new Display(this);
 		map = new GameMap(screenTileSize.getScreenTileSize());
 		player = new Player(this);
+		tileManager = new TileManager(this, screenTileSize.getScreenTileSize());
 
 		//KeyListener
 		GameKeyListener gameKeyListener = new GameKeyListener(this);
@@ -52,7 +56,7 @@ public class Game extends JFrame {
 	}
 
 	public void tick(){
-		map.fillMap(player);
+		//map.fillMap(player);
 		player.tick();
 	}
 
@@ -61,13 +65,14 @@ public class Game extends JFrame {
 		g2.setColor(Color.BLACK);
 		g2.fillRect(0, 0, getWidth(), getHeight());
 
-		map.render(g2, map.getTileSize());
+		//map.render(g2, map.getTileSize());
 		player.render(g2, map.getTileSize());
 		if(rendertemp == 0){
 			map.generateMap(this);
 			rendertemp++;
 		}
-		map.render(g2, map.getTileSize());
+		//map.render(g2, map.getTileSize());
+		tileManager.draw(g2);
 		player.render(g2, map.getTileSize());
 	}
 

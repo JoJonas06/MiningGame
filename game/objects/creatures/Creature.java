@@ -1,10 +1,8 @@
 package game.objects.creatures;
 
-import game.Collision;
 import game.Game;
-import game.objects.GameObject;
 
-public abstract class Creature extends GameObject{
+public abstract class Creature{
 
 	protected final Game game;
 	protected double screenX;

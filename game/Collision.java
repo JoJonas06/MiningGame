@@ -1,13 +1,10 @@
 package game;
 
 import game.objects.creatures.Player;
-import game.objects.tiles.Air;
-import game.objects.tiles.Rock;
 import game.objects.tiles.Tile;
-import game.objects.tiles.Water;
 
 public class Collision {
-
+/*
     public static void waterCollision(Game game){
         GameMap map = game.getMap();
         Player player = game.getPlayer();
@@ -65,4 +62,5 @@ public class Collision {
                 player.setScreenX(player.getScreenX() - 0.1);
             }
     }
+ */
 }

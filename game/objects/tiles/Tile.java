@@ -1,25 +1,9 @@
 package game.objects.tiles;
 
-import game.objects.GameObject;
+import java.awt.image.BufferedImage;
 
-import java.awt.*;
+public class Tile {
 
-public abstract class Tile extends GameObject {
-
-	//Attribute
-	protected final double x;
-	protected final double y;
-	protected boolean collision = false;
-	
-	//Konstruktor
-	public Tile(double x, double y) {
-		this.x = x;
-		this.y = y;
-	}
-
-	public abstract void render(Graphics2D g, double tileSize);
-
-	public abstract void highlight(int a);
-
-	public abstract void mine();
+	public BufferedImage image;
+	public boolean collision = false;
 }
